@@ -296,5 +296,7 @@
     </qresource>
     <qresource prefix="/img">
         <file>img/hostel.jpg</file>
+        <file>img/signup.png</file>
+        <file>img/login.jpg</file>
     </qresource>
 </RCC>

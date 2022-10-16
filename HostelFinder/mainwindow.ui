@@ -19,9 +19,22 @@
   </property>
   <property name="styleSheet">
    <string notr="true">*{
-	font: 500 10pt &quot;Montserrat&quot;;
-	margin: 0;
+	font-size: 12pt;
+}
+QMessageBox {
+	corner-radius: 5px;
+}
+QMessageBox QPushButton {
+	width: 40px;
+	height: 25px;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="styleSheet">
+    <string notr="true">*{
+	font-size: 10pt;
 	padding: 0;
+	margin: 0;
 }
 #centralWidget{
 	background: #fff;
@@ -31,33 +44,28 @@
 	font-weight: 600;
 }
 #label_footer{
-	font: 400 8pt &quot;Montserrat&quot;;
+	font: 400 9pt;
+	padding: 2px;
 }
-#mainBodyContainer{
+#mainBodyContainer, #leftMenuContainer{
 	border: 1.5px solid #f4f4f4;
 }
-#leftMenuContainer{
-	border: 1.5px solid #f4f4f4;
-}
-QPushButton{
+#centralWidget .QPushButton{
 background: transparent;
 border-radius: 5px;
-font-size: 12pt;
+font-size: 14pt;
 text-align: left;
-padding: 10px;
+padding: 8px;
 }
-QPushButton:hover{
+#centralWidget .QPushButton:hover{
 font-weight: 600;
 background: rgb(255, 255, 125);
-}</string>
-  </property>
-  <widget class="QWidget" name="centralWidget">
-   <property name="styleSheet">
-    <string notr="true"/>
+}
+</string>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <property name="spacing">
-     <number>2</number>
+     <number>0</number>
     </property>
     <property name="leftMargin">
      <number>0</number>
@@ -198,15 +206,6 @@ font-size: 20px;
               <height>16777215</height>
              </size>
             </property>
-            <property name="font">
-             <font>
-              <family>Montserrat</family>
-              <pointsize>14</pointsize>
-              <italic>false</italic>
-              <bold>true</bold>
-              <kerning>true</kerning>
-             </font>
-            </property>
             <property name="text">
              <string>Main Menu</string>
             </property>
@@ -334,7 +333,7 @@ font-size: 20px;
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="dashboardBtn">
+              <widget class="QPushButton" name="loginMenuBtn">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -345,11 +344,11 @@ font-size: 20px;
                 <string>Manage your hostel information</string>
                </property>
                <property name="text">
-                <string>Dashboard</string>
+                <string>Login</string>
                </property>
                <property name="icon">
                 <iconset resource="resources.qrc">
-                 <normaloff>:/assets/icons/trello.svg</normaloff>:/assets/icons/trello.svg</iconset>
+                 <normaloff>:/assets/icons/user.svg</normaloff>:/assets/icons/user.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -360,7 +359,7 @@ font-size: 20px;
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="signUpBtn">
+              <widget class="QPushButton" name="signUpMenuBtn">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -368,7 +367,7 @@ font-size: 20px;
                 </size>
                </property>
                <property name="toolTip">
-                <string>Create new account to list your hostel</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Create an account to list your hostel&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="text">
                 <string>Sign Up</string>
@@ -393,6 +392,9 @@ font-size: 20px;
        </item>
        <item alignment="Qt::AlignBottom">
         <widget class="QFrame" name="footerContainer">
+         <property name="styleSheet">
+          <string notr="true">padding: 2px;</string>
+         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -420,8 +422,7 @@ font-size: 20px;
            <widget class="QLabel" name="label_footer">
             <property name="font">
              <font>
-              <family>Montserrat</family>
-              <pointsize>8</pointsize>
+              <pointsize>9</pointsize>
               <italic>false</italic>
               <bold>false</bold>
              </font>
@@ -461,13 +462,32 @@ font-size: 20px;
        <string notr="true"/>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_3">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <item>
         <widget class="QStackedWidget" name="stackedWidget">
          <property name="styleSheet">
           <string notr="true">QPushButton{
 	text-align : center;
-	border: 1px solid black;
-}</string>
+	border: 1.5px solid black;
+}
+</string>
+         </property>
+         <property name="currentIndex">
+          <number>2</number>
          </property>
          <widget class="QWidget" name="home_page">
           <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -488,6 +508,12 @@ font-size: 20px;
            </property>
            <item>
             <widget class="QFrame" name="frame">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
              </property>
@@ -496,9 +522,9 @@ font-size: 20px;
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_2">
               <item>
-               <widget class="QFrame" name="frame_3">
+               <widget class="QFrame" name="frame_left">
                 <property name="sizePolicy">
-                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
@@ -511,14 +537,14 @@ font-size: 20px;
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_6">
                  <item>
-                  <widget class="QLabel" name="label_4">
+                  <widget class="QLabel" name="label_upSpacing">
                    <property name="text">
                     <string/>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label">
+                  <widget class="QLabel" name="label_heading">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                      <horstretch>0</horstretch>
@@ -538,7 +564,7 @@ font-size: 20px;
                     </size>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">font-size: 18pt;</string>
+                    <string notr="true">font: 18pt 600;</string>
                    </property>
                    <property name="text">
                     <string>Welcome to Hostel Finder Application</string>
@@ -549,7 +575,7 @@ font-size: 20px;
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_2">
+                  <widget class="QLabel" name="label_subHeading">
                    <property name="maximumSize">
                     <size>
                      <width>16777215</width>
@@ -557,7 +583,7 @@ font-size: 20px;
                     </size>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">font: 16pt &quot;Comic Sans MS&quot;;</string>
+                    <string notr="true">font: 14pt &quot;Comic Sans MS&quot;;</string>
                    </property>
                    <property name="text">
                     <string>Search Hostels Near You Easily</string>
@@ -568,7 +594,7 @@ font-size: 20px;
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_3">
+                  <widget class="QLabel" name="label_downSpacing">
                    <property name="text">
                     <string/>
                    </property>
@@ -577,8 +603,14 @@ font-size: 20px;
                 </layout>
                </widget>
               </item>
-              <item alignment="Qt::AlignRight">
-               <widget class="QFrame" name="frame_4">
+              <item>
+               <widget class="QFrame" name="frame_right">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
@@ -586,17 +618,17 @@ font-size: 20px;
                  <enum>QFrame::Raised</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_7">
-                 <item>
-                  <widget class="QLabel" name="label_pic">
+                 <item alignment="Qt::AlignHCenter">
+                  <widget class="QLabel" name="label_pic_home">
                    <property name="sizePolicy">
-                    <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
                    </property>
                    <property name="minimumSize">
                     <size>
-                     <width>400</width>
+                     <width>550</width>
                      <height>0</height>
                     </size>
                    </property>
@@ -613,14 +645,354 @@ font-size: 20px;
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="signUp_page">
-          <widget class="QLabel" name="label_signUp">
+         <widget class="QWidget" name="dashboard_page">
+          <widget class="QLabel" name="label_dashboardHead">
            <property name="geometry">
             <rect>
              <x>30</x>
-             <y>10</y>
+             <y>20</y>
              <width>251</width>
-             <height>51</height>
+             <height>61</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font-size : 16pt;</string>
+           </property>
+           <property name="text">
+            <string>Dashboard</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+          <widget class="Line" name="line_dashboard">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>60</y>
+             <width>125</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>125</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="login_page">
+          <widget class="QLabel" name="label_loginHead">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>20</y>
+             <width>251</width>
+             <height>61</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font-size : 16pt;</string>
+           </property>
+           <property name="text">
+            <string>Login</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+          <widget class="Line" name="line_login">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>60</y>
+             <width>91</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+          <widget class="QFrame" name="login_frame">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>110</y>
+             <width>471</width>
+             <height>411</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#login_frame{
+	background-color: rgba(244, 244, 244, 100);
+	border-radius: 10px;
+}
+.QLabel{
+	font: 600 12pt;
+}
+.QLineEdit{
+	background: transparent;
+	border:none;
+	border-bottom: 1px solid rgb(209, 207, 207);
+}
+.QToolButton{
+	background: none;
+	border: none;
+}
+#label_login{
+	font: 600 18pt;
+	color: rgb(85, 170, 255)
+}
+</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <widget class="QLabel" name="label_login">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>10</y>
+              <width>471</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string>Enter Login Details</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="loginBtn">
+            <property name="geometry">
+             <rect>
+              <x>100</x>
+              <y>250</y>
+              <width>261</width>
+              <height>45</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string>Login</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="createAccountBtn">
+            <property name="geometry">
+             <rect>
+              <x>100</x>
+              <y>320</y>
+              <width>261</width>
+              <height>45</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Create an account</string>
+            </property>
+           </widget>
+           <widget class="QFrame" name="frame_login_password">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>150</y>
+              <width>411</width>
+              <height>81</height>
+             </rect>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <widget class="QLabel" name="label_login_password">
+             <property name="geometry">
+              <rect>
+               <x>70</x>
+               <y>0</y>
+               <width>131</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Enter Password</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="in_login_pswrd">
+             <property name="geometry">
+              <rect>
+               <x>70</x>
+               <y>40</y>
+               <width>261</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="autoFillBackground">
+              <bool>false</bool>
+             </property>
+             <property name="inputMask">
+              <string/>
+             </property>
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
+             </property>
+             <property name="placeholderText">
+              <string>Enter Your Password</string>
+             </property>
+            </widget>
+            <widget class="QToolButton" name="login_pswdShowBtn">
+             <property name="geometry">
+              <rect>
+               <x>290</x>
+               <y>40</y>
+               <width>41</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="resources.qrc">
+               <normaloff>:/assets/icons/eye.svg</normaloff>:/assets/icons/eye.svg</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+            </widget>
+            <widget class="QToolButton" name="login_pswdHideBtn">
+             <property name="geometry">
+              <rect>
+               <x>290</x>
+               <y>40</y>
+               <width>41</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="resources.qrc">
+               <normaloff>:/assets/icons/eye-off.svg</normaloff>:/assets/icons/eye-off.svg</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QFrame" name="frame_login_mobileNo">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>60</y>
+              <width>411</width>
+              <height>81</height>
+             </rect>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <widget class="QLineEdit" name="in_login_mobileNo">
+             <property name="geometry">
+              <rect>
+               <x>70</x>
+               <y>40</y>
+               <width>261</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="inputMethodHints">
+              <set>Qt::ImhDigitsOnly|Qt::ImhFormattedNumbersOnly|Qt::ImhPreferNumbers</set>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="placeholderText">
+              <string>E.g: 9801200030</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_login_mobileNo">
+             <property name="geometry">
+              <rect>
+               <x>70</x>
+               <y>0</y>
+               <width>121</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Enter Mobile No</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </widget>
+          </widget>
+          <widget class="QLabel" name="label_pic_login">
+           <property name="geometry">
+            <rect>
+             <x>490</x>
+             <y>10</y>
+             <width>501</width>
+             <height>560</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>500</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="signUp_page">
+          <widget class="QLabel" name="label_signUpHead">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>20</y>
+             <width>251</width>
+             <height>61</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -629,15 +1001,41 @@ font-size: 20px;
            <property name="text">
             <string>Sign Up</string>
            </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
           </widget>
-          <widget class="QFrame" name="frame_2">
+          <widget class="QFrame" name="signUp_frame">
            <property name="geometry">
             <rect>
              <x>30</x>
-             <y>60</y>
-             <width>511</width>
+             <y>110</y>
+             <width>471</width>
              <height>411</height>
             </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#signUp_frame{
+	background-color: rgba(244, 244, 244, 100);
+	border-radius: 10px;
+}
+.QLabel{
+	font-weight: 600;
+}
+.QLineEdit{
+	background: transparent;
+	border:none;
+	border-bottom: 1px solid rgb(209, 207, 207);
+}
+.QToolButton{
+	background: none;
+	border: none;
+}
+#label_create_an_account{
+	font: 600 18pt;
+	color: rgb(85, 170, 255)
+}
+</string>
            </property>
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
@@ -645,30 +1043,17 @@ font-size: 20px;
            <property name="frameShadow">
             <enum>QFrame::Raised</enum>
            </property>
-           <widget class="QLineEdit" name="in_username">
+           <widget class="QLabel" name="label_create_an_account">
             <property name="geometry">
              <rect>
-              <x>100</x>
-              <y>140</y>
-              <width>261</width>
-              <height>31</height>
-             </rect>
-            </property>
-            <property name="placeholderText">
-             <string>E.g: raj_shakya</string>
-            </property>
-           </widget>
-           <widget class="QLabel" name="label_login_details">
-            <property name="geometry">
-             <rect>
-              <x>10</x>
+              <x>0</x>
               <y>10</y>
-              <width>361</width>
+              <width>471</width>
               <height>41</height>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">font-size: 14pt;</string>
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>Create an account</string>
@@ -677,184 +1062,375 @@ font-size: 20px;
              <set>Qt::AlignCenter</set>
             </property>
            </widget>
-           <widget class="QLabel" name="label_username">
+           <widget class="QPushButton" name="signUpBtn">
             <property name="geometry">
              <rect>
-              <x>20</x>
-              <y>140</y>
-              <width>111</width>
-              <height>31</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>Username</string>
-            </property>
-           </widget>
-           <widget class="QLineEdit" name="in_pswrd">
-            <property name="geometry">
-             <rect>
-              <x>100</x>
-              <y>180</y>
+              <x>110</x>
+              <y>280</y>
               <width>261</width>
-              <height>31</height>
+              <height>45</height>
              </rect>
             </property>
-            <property name="autoFillBackground">
-             <bool>false</bool>
-            </property>
-            <property name="inputMask">
-             <string/>
-            </property>
-            <property name="echoMode">
-             <enum>QLineEdit::Password</enum>
-            </property>
-            <property name="placeholderText">
-             <string>Enter Your Password</string>
-            </property>
-           </widget>
-           <widget class="QLabel" name="label_password">
-            <property name="geometry">
-             <rect>
-              <x>20</x>
-              <y>180</y>
-              <width>81</width>
-              <height>31</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>Password</string>
-            </property>
-           </widget>
-           <widget class="QPushButton" name="login_btn">
-            <property name="geometry">
-             <rect>
-              <x>100</x>
-              <y>240</y>
-              <width>261</width>
-              <height>41</height>
-             </rect>
+            <property name="styleSheet">
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>Sign Up</string>
             </property>
            </widget>
-           <widget class="QPushButton" name="pushButton">
+           <widget class="QPushButton" name="signUp_cancelBtn">
             <property name="geometry">
              <rect>
-              <x>100</x>
-              <y>290</y>
+              <x>110</x>
+              <y>340</y>
               <width>261</width>
-              <height>41</height>
+              <height>45</height>
              </rect>
             </property>
             <property name="text">
              <string>Cancel</string>
             </property>
            </widget>
-           <widget class="QToolButton" name="pswdShowBtn">
+           <widget class="QFrame" name="frame_password">
             <property name="geometry">
              <rect>
-              <x>320</x>
-              <y>180</y>
-              <width>41</width>
-              <height>31</height>
+              <x>30</x>
+              <y>150</y>
+              <width>411</width>
+              <height>51</height>
              </rect>
             </property>
-            <property name="text">
-             <string>...</string>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
             </property>
-            <property name="icon">
-             <iconset resource="resources.qrc">
-              <normaloff>:/assets/icons/eye.svg</normaloff>:/assets/icons/eye.svg</iconset>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
             </property>
-            <property name="iconSize">
-             <size>
-              <width>24</width>
-              <height>24</height>
-             </size>
-            </property>
+            <widget class="QLabel" name="label_password">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>10</y>
+               <width>121</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Enter Password</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="in_pswrd">
+             <property name="geometry">
+              <rect>
+               <x>130</x>
+               <y>10</y>
+               <width>261</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="autoFillBackground">
+              <bool>false</bool>
+             </property>
+             <property name="inputMask">
+              <string/>
+             </property>
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
+             </property>
+             <property name="placeholderText">
+              <string>Enter Your Password</string>
+             </property>
+            </widget>
+            <widget class="QToolButton" name="pswdShowBtn">
+             <property name="geometry">
+              <rect>
+               <x>350</x>
+               <y>10</y>
+               <width>41</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="resources.qrc">
+               <normaloff>:/assets/icons/eye.svg</normaloff>:/assets/icons/eye.svg</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+            </widget>
+            <widget class="QToolButton" name="pswdHideBtn">
+             <property name="geometry">
+              <rect>
+               <x>350</x>
+               <y>10</y>
+               <width>41</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="resources.qrc">
+               <normaloff>:/assets/icons/eye-off.svg</normaloff>:/assets/icons/eye-off.svg</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+            </widget>
            </widget>
-           <widget class="QToolButton" name="pswdHideBtn">
+           <widget class="QFrame" name="frame_confirmPassword">
             <property name="geometry">
              <rect>
-              <x>320</x>
-              <y>180</y>
-              <width>41</width>
-              <height>31</height>
+              <x>30</x>
+              <y>200</y>
+              <width>411</width>
+              <height>51</height>
              </rect>
             </property>
-            <property name="text">
-             <string>...</string>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
             </property>
-            <property name="icon">
-             <iconset resource="resources.qrc">
-              <normaloff>:/assets/icons/eye-off.svg</normaloff>:/assets/icons/eye-off.svg</iconset>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
             </property>
-            <property name="iconSize">
-             <size>
-              <width>24</width>
-              <height>24</height>
-             </size>
-            </property>
+            <widget class="QLabel" name="label_confirmPassword">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>10</y>
+               <width>121</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Confirm Password</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="in_confirm_pswrd">
+             <property name="geometry">
+              <rect>
+               <x>130</x>
+               <y>10</y>
+               <width>261</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="autoFillBackground">
+              <bool>false</bool>
+             </property>
+             <property name="inputMethodHints">
+              <set>Qt::ImhHiddenText|Qt::ImhNoAutoUppercase|Qt::ImhNoPredictiveText|Qt::ImhSensitiveData</set>
+             </property>
+             <property name="inputMask">
+              <string/>
+             </property>
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
+             </property>
+             <property name="placeholderText">
+              <string>Confirm Your Password</string>
+             </property>
+            </widget>
+            <widget class="QToolButton" name="pswdShowBtn_2">
+             <property name="geometry">
+              <rect>
+               <x>350</x>
+               <y>10</y>
+               <width>41</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="resources.qrc">
+               <normaloff>:/assets/icons/eye.svg</normaloff>:/assets/icons/eye.svg</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+            </widget>
+            <widget class="QToolButton" name="pswdHideBtn_2">
+             <property name="geometry">
+              <rect>
+               <x>350</x>
+               <y>10</y>
+               <width>41</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="resources.qrc">
+               <normaloff>:/assets/icons/eye-off.svg</normaloff>:/assets/icons/eye-off.svg</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+            </widget>
            </widget>
-           <widget class="QLabel" name="label_fullname">
+           <widget class="QFrame" name="frame_fullname">
             <property name="geometry">
              <rect>
-              <x>20</x>
-              <y>60</y>
-              <width>111</width>
-              <height>31</height>
+              <x>30</x>
+              <y>50</y>
+              <width>411</width>
+              <height>51</height>
              </rect>
             </property>
-            <property name="text">
-             <string>Full Name</string>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
             </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <widget class="QLineEdit" name="in_fullname">
+             <property name="geometry">
+              <rect>
+               <x>130</x>
+               <y>10</y>
+               <width>261</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="placeholderText">
+              <string>E.g: Raj Kumar Shakya</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_fullname">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>10</y>
+               <width>121</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Enter Full Name</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
            </widget>
-           <widget class="QLineEdit" name="in_fullname">
+           <widget class="QFrame" name="frame_mobileNo">
             <property name="geometry">
              <rect>
-              <x>100</x>
-              <y>60</y>
-              <width>261</width>
-              <height>31</height>
-             </rect>
-            </property>
-            <property name="placeholderText">
-             <string>E.g: Raj Kumar Shakya</string>
-            </property>
-           </widget>
-           <widget class="QLineEdit" name="in_contactNo">
-            <property name="geometry">
-             <rect>
-              <x>100</x>
+              <x>30</x>
               <y>100</y>
-              <width>261</width>
-              <height>31</height>
+              <width>411</width>
+              <height>51</height>
              </rect>
             </property>
-            <property name="inputMethodHints">
-             <set>Qt::ImhDigitsOnly|Qt::ImhFormattedNumbersOnly|Qt::ImhPreferNumbers</set>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
             </property>
-            <property name="text">
-             <string/>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
             </property>
-            <property name="placeholderText">
-             <string>E.g: 9801200030</string>
-            </property>
+            <widget class="QLineEdit" name="in_mobileNo">
+             <property name="geometry">
+              <rect>
+               <x>130</x>
+               <y>10</y>
+               <width>261</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="inputMethodHints">
+              <set>Qt::ImhDigitsOnly|Qt::ImhFormattedNumbersOnly|Qt::ImhPreferNumbers</set>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="placeholderText">
+              <string>E.g: 9801200030</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_mobileNo">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>10</y>
+               <width>121</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Enter Mobile No</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
            </widget>
-           <widget class="QLabel" name="label_contactNo">
-            <property name="geometry">
-             <rect>
-              <x>20</x>
-              <y>100</y>
-              <width>111</width>
-              <height>31</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>Contact No</string>
-            </property>
-           </widget>
+          </widget>
+          <widget class="QLabel" name="label_pic_signUp">
+           <property name="geometry">
+            <rect>
+             <x>480</x>
+             <y>10</y>
+             <width>501</width>
+             <height>560</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>500</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <widget class="Line" name="line_signUp">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>55</y>
+             <width>91</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
           </widget>
          </widget>
         </widget>
