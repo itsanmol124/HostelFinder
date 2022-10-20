@@ -35,7 +35,7 @@
         "-I",
         "C:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\HostelFinder",
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\HostelFinder",
         "-I",
         "C:\\Qt\\6.3.1\\mingw_64\\include",
         "-I",
@@ -47,9 +47,9 @@
         "-I",
         "C:\\Qt\\6.3.1\\mingw_64\\include\\QtCore",
         "-I",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug\\debug",
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug\\debug",
         "-I",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug",
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug",
         "-I",
         "C:\\Qt\\6.3.1\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -69,10 +69,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\HostelFinder\\dashboard.cpp"
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\HostelFinder\\dashboard.cpp"
     ],
-    "directory": "C:/Users/lucky/OneDrive/Documents/Hostel Finder CPP Project/build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/lucky/OneDrive/Documents/Hostel Finder CPP Project/HostelFinder/dashboard.cpp"
+    "directory": "C:/Users/hp/OneDrive/Documents/Learn/learn-cpp/qt-projects/HostelFinderProject/build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug/.qtc_clangd",
+    "file": "C:/Users/hp/OneDrive/Documents/Learn/learn-cpp/qt-projects/HostelFinderProject/HostelFinder/dashboard.cpp"
 },
 {
     "arguments": [
@@ -110,7 +110,7 @@
         "-I",
         "C:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\HostelFinder",
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\HostelFinder",
         "-I",
         "C:\\Qt\\6.3.1\\mingw_64\\include",
         "-I",
@@ -122,9 +122,9 @@
         "-I",
         "C:\\Qt\\6.3.1\\mingw_64\\include\\QtCore",
         "-I",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug\\debug",
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug\\debug",
         "-I",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug",
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug",
         "-I",
         "C:\\Qt\\6.3.1\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -144,10 +144,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\HostelFinder\\main.cpp"
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\HostelFinder\\main.cpp"
     ],
-    "directory": "C:/Users/lucky/OneDrive/Documents/Hostel Finder CPP Project/build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/lucky/OneDrive/Documents/Hostel Finder CPP Project/HostelFinder/main.cpp"
+    "directory": "C:/Users/hp/OneDrive/Documents/Learn/learn-cpp/qt-projects/HostelFinderProject/build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug/.qtc_clangd",
+    "file": "C:/Users/hp/OneDrive/Documents/Learn/learn-cpp/qt-projects/HostelFinderProject/HostelFinder/main.cpp"
 },
 {
     "arguments": [
@@ -185,7 +185,7 @@
         "-I",
         "C:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\HostelFinder",
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\HostelFinder",
         "-I",
         "C:\\Qt\\6.3.1\\mingw_64\\include",
         "-I",
@@ -197,9 +197,9 @@
         "-I",
         "C:\\Qt\\6.3.1\\mingw_64\\include\\QtCore",
         "-I",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug\\debug",
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug\\debug",
         "-I",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug",
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug",
         "-I",
         "C:\\Qt\\6.3.1\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -219,10 +219,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\HostelFinder\\mainwindow.cpp"
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\HostelFinder\\mainwindow.cpp"
     ],
-    "directory": "C:/Users/lucky/OneDrive/Documents/Hostel Finder CPP Project/build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/lucky/OneDrive/Documents/Hostel Finder CPP Project/HostelFinder/mainwindow.cpp"
+    "directory": "C:/Users/hp/OneDrive/Documents/Learn/learn-cpp/qt-projects/HostelFinderProject/build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug/.qtc_clangd",
+    "file": "C:/Users/hp/OneDrive/Documents/Learn/learn-cpp/qt-projects/HostelFinderProject/HostelFinder/mainwindow.cpp"
 },
 {
     "arguments": [
@@ -260,7 +260,7 @@
         "-I",
         "C:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\HostelFinder",
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\HostelFinder",
         "-I",
         "C:\\Qt\\6.3.1\\mingw_64\\include",
         "-I",
@@ -272,9 +272,9 @@
         "-I",
         "C:\\Qt\\6.3.1\\mingw_64\\include\\QtCore",
         "-I",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug\\debug",
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug\\debug",
         "-I",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug",
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug",
         "-I",
         "C:\\Qt\\6.3.1\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -294,10 +294,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\HostelFinder\\dashboard.h"
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\HostelFinder\\dashboard.h"
     ],
-    "directory": "C:/Users/lucky/OneDrive/Documents/Hostel Finder CPP Project/build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/lucky/OneDrive/Documents/Hostel Finder CPP Project/HostelFinder/dashboard.h"
+    "directory": "C:/Users/hp/OneDrive/Documents/Learn/learn-cpp/qt-projects/HostelFinderProject/build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug/.qtc_clangd",
+    "file": "C:/Users/hp/OneDrive/Documents/Learn/learn-cpp/qt-projects/HostelFinderProject/HostelFinder/dashboard.h"
 },
 {
     "arguments": [
@@ -335,7 +335,7 @@
         "-I",
         "C:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\HostelFinder",
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\HostelFinder",
         "-I",
         "C:\\Qt\\6.3.1\\mingw_64\\include",
         "-I",
@@ -347,9 +347,9 @@
         "-I",
         "C:\\Qt\\6.3.1\\mingw_64\\include\\QtCore",
         "-I",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug\\debug",
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug\\debug",
         "-I",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug",
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug",
         "-I",
         "C:\\Qt\\6.3.1\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -369,10 +369,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\HostelFinder\\mainwindow.h"
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\HostelFinder\\mainwindow.h"
     ],
-    "directory": "C:/Users/lucky/OneDrive/Documents/Hostel Finder CPP Project/build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/lucky/OneDrive/Documents/Hostel Finder CPP Project/HostelFinder/mainwindow.h"
+    "directory": "C:/Users/hp/OneDrive/Documents/Learn/learn-cpp/qt-projects/HostelFinderProject/build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug/.qtc_clangd",
+    "file": "C:/Users/hp/OneDrive/Documents/Learn/learn-cpp/qt-projects/HostelFinderProject/HostelFinder/mainwindow.h"
 },
 {
     "arguments": [
@@ -410,7 +410,7 @@
         "-I",
         "C:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\HostelFinder",
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\HostelFinder",
         "-I",
         "C:\\Qt\\6.3.1\\mingw_64\\include",
         "-I",
@@ -422,9 +422,9 @@
         "-I",
         "C:\\Qt\\6.3.1\\mingw_64\\include\\QtCore",
         "-I",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug\\debug",
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug\\debug",
         "-I",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug",
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug",
         "-I",
         "C:\\Qt\\6.3.1\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -444,10 +444,10 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug\\ui_dashboard.h"
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug\\ui_dashboard.h"
     ],
-    "directory": "C:/Users/lucky/OneDrive/Documents/Hostel Finder CPP Project/build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/lucky/OneDrive/Documents/Hostel Finder CPP Project/build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug/ui_dashboard.h"
+    "directory": "C:/Users/hp/OneDrive/Documents/Learn/learn-cpp/qt-projects/HostelFinderProject/build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug/.qtc_clangd",
+    "file": "C:/Users/hp/OneDrive/Documents/Learn/learn-cpp/qt-projects/HostelFinderProject/build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug/ui_dashboard.h"
 },
 {
     "arguments": [
@@ -485,7 +485,7 @@
         "-I",
         "C:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\HostelFinder",
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\HostelFinder",
         "-I",
         "C:\\Qt\\6.3.1\\mingw_64\\include",
         "-I",
@@ -497,9 +497,9 @@
         "-I",
         "C:\\Qt\\6.3.1\\mingw_64\\include\\QtCore",
         "-I",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug\\debug",
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug\\debug",
         "-I",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug",
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug",
         "-I",
         "C:\\Qt\\6.3.1\\mingw_64\\mkspecs\\win32-g++",
         "-isystem",
@@ -519,9 +519,9 @@
         "-ferror-limit=1000",
         "-x",
         "c++-header",
-        "C:\\Users\\lucky\\OneDrive\\Documents\\Hostel Finder CPP Project\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug\\ui_mainwindow.h"
+        "C:\\Users\\hp\\OneDrive\\Documents\\Learn\\learn-cpp\\qt-projects\\HostelFinderProject\\build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug\\ui_mainwindow.h"
     ],
-    "directory": "C:/Users/lucky/OneDrive/Documents/Hostel Finder CPP Project/build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug/.qtc_clangd",
-    "file": "C:/Users/lucky/OneDrive/Documents/Hostel Finder CPP Project/build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug/ui_mainwindow.h"
+    "directory": "C:/Users/hp/OneDrive/Documents/Learn/learn-cpp/qt-projects/HostelFinderProject/build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug/.qtc_clangd",
+    "file": "C:/Users/hp/OneDrive/Documents/Learn/learn-cpp/qt-projects/HostelFinderProject/build-HostelFinder-Desktop_Qt_6_3_1_MinGW_64_bit-Debug/ui_mainwindow.h"
 }
 ]
