@@ -21,18 +21,19 @@
    <string notr="true">*{
 	font-size: 12pt;
 }
-QMessageBox {
-	corner-radius: 5px;
-}
 QMessageBox QPushButton {
 	width: 40px;
 	height: 25px;
+}
+QPushButtonActive{
+	font-weight: 600;
+	background: rgb(255, 255, 125);
 }</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <property name="styleSheet">
     <string notr="true">*{
-	font-size: 10pt;
+	font-size: 11pt;
 	padding: 0;
 	margin: 0;
 }
@@ -63,10 +64,7 @@ background: rgb(255, 255, 125);
 }
 </string>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <property name="spacing">
-     <number>0</number>
-    </property>
+   <layout class="QGridLayout" name="gridLayout_2">
     <property name="leftMargin">
      <number>0</number>
     </property>
@@ -79,7 +77,10 @@ background: rgb(255, 255, 125);
     <property name="bottomMargin">
      <number>0</number>
     </property>
-    <item alignment="Qt::AlignLeft">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="0" column="0">
      <widget class="QWidget" name="leftMenuContainer" native="true">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -158,9 +159,6 @@ background: rgb(255, 255, 125);
               <width>0</width>
               <height>50</height>
              </size>
-            </property>
-            <property name="toolTip">
-             <string>Hostel Finder</string>
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton{
@@ -249,15 +247,12 @@ font-size: 20px;
               <number>20</number>
              </property>
              <item>
-              <widget class="QPushButton" name="searchHostelsBtn">
+              <widget class="QPushButton" name="searchHostelsMenuBtn">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
                  <height>50</height>
                 </size>
-               </property>
-               <property name="toolTip">
-                <string>Search hostels around you</string>
                </property>
                <property name="text">
                 <string>Search Hostels</string>
@@ -272,6 +267,9 @@ font-size: 20px;
                  <height>24</height>
                 </size>
                </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
                <property name="autoDefault">
                 <bool>false</bool>
                </property>
@@ -281,15 +279,12 @@ font-size: 20px;
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="boysHostelsBtn">
+              <widget class="QPushButton" name="boysHostelsMenuBtn">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
                  <height>50</height>
                 </size>
-               </property>
-               <property name="toolTip">
-                <string>See Boys hostels around you</string>
                </property>
                <property name="text">
                 <string>Boys Hostels</string>
@@ -307,15 +302,12 @@ font-size: 20px;
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="girlsHostelsBtn">
+              <widget class="QPushButton" name="girlsHostelsMenuBtn">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
                  <height>50</height>
                 </size>
-               </property>
-               <property name="toolTip">
-                <string>See Girls hostels around you</string>
                </property>
                <property name="text">
                 <string>Girls Hostels</string>
@@ -340,9 +332,6 @@ font-size: 20px;
                  <height>50</height>
                 </size>
                </property>
-               <property name="toolTip">
-                <string>Manage your hostel information</string>
-               </property>
                <property name="text">
                 <string>Login</string>
                </property>
@@ -356,6 +345,9 @@ font-size: 20px;
                  <height>24</height>
                 </size>
                </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
               </widget>
              </item>
              <item>
@@ -366,15 +358,35 @@ font-size: 20px;
                  <height>50</height>
                 </size>
                </property>
-               <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Create an account to list your hostel&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
                <property name="text">
                 <string>Sign Up</string>
                </property>
                <property name="icon">
                 <iconset resource="resources.qrc">
                  <normaloff>:/assets/icons/user-plus.svg</normaloff>:/assets/icons/user-plus.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>24</width>
+                 <height>24</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="exitBtn">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Exit</string>
+               </property>
+               <property name="icon">
+                <iconset resource="resources.qrc">
+                 <normaloff>:/assets/icons/x-circle.svg</normaloff>:/assets/icons/x-circle.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -441,7 +453,7 @@ font-size: 20px;
       </layout>
      </widget>
     </item>
-    <item>
+    <item row="0" column="1">
      <widget class="QWidget" name="mainBodyContainer" native="true">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -479,6 +491,12 @@ font-size: 20px;
        </property>
        <item>
         <widget class="QStackedWidget" name="stackedWidget">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
 	text-align : center;
@@ -487,7 +505,7 @@ font-size: 20px;
 </string>
          </property>
          <property name="currentIndex">
-          <number>2</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="home_page">
           <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -645,12 +663,12 @@ font-size: 20px;
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="dashboard_page">
-          <widget class="QLabel" name="label_dashboardHead">
+         <widget class="QWidget" name="searchHostels_page">
+          <widget class="QLabel" name="label_searchHostelsHead">
            <property name="geometry">
             <rect>
-             <x>30</x>
-             <y>20</y>
+             <x>70</x>
+             <y>-10</y>
              <width>251</width>
              <height>61</height>
             </rect>
@@ -659,18 +677,18 @@ font-size: 20px;
             <string notr="true">font-size : 16pt;</string>
            </property>
            <property name="text">
-            <string>Dashboard</string>
+            <string>Search Hostels</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
           </widget>
-          <widget class="Line" name="line_dashboard">
+          <widget class="Line" name="line_searchHostels">
            <property name="geometry">
             <rect>
-             <x>30</x>
-             <y>60</y>
-             <width>125</width>
+             <x>70</x>
+             <y>30</y>
+             <width>150</width>
              <height>21</height>
             </rect>
            </property>
@@ -683,6 +701,714 @@ font-size: 20px;
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
+          </widget>
+          <widget class="QPushButton" name="backBtn">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>10</y>
+             <width>41</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="resources.qrc">
+             <normaloff>:/assets/icons/arrow-left.svg</normaloff>:/assets/icons/arrow-left.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>28</width>
+             <height>28</height>
+            </size>
+           </property>
+          </widget>
+          <widget class="QFrame" name="hostelInfo_frame">
+           <property name="geometry">
+            <rect>
+             <x>610</x>
+             <y>10</y>
+             <width>401</width>
+             <height>581</height>
+            </rect>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <widget class="QLabel" name="label_prices">
+            <property name="geometry">
+             <rect>
+              <x>230</x>
+              <y>230</y>
+              <width>151</width>
+              <height>79</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_hostel_facilities">
+            <property name="geometry">
+             <rect>
+              <x>11</x>
+              <y>351</y>
+              <width>381</width>
+              <height>159</height>
+             </rect>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_hostel_location_2">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>40</y>
+              <width>191</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 600 12pt;</string>
+            </property>
+            <property name="text">
+             <string>Location:</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_sharing_options_2">
+            <property name="geometry">
+             <rect>
+              <x>11</x>
+              <y>200</y>
+              <width>191</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 600 12pt;</string>
+            </property>
+            <property name="text">
+             <string>Sharing Options:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_prices_2">
+            <property name="geometry">
+             <rect>
+              <x>230</x>
+              <y>200</y>
+              <width>151</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 600 12pt;</string>
+            </property>
+            <property name="text">
+             <string>Prices:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+            </property>
+           </widget>
+           <widget class="Line" name="line_2">
+            <property name="geometry">
+             <rect>
+              <x>11</x>
+              <y>220</y>
+              <width>131</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="Line" name="line_3">
+            <property name="geometry">
+             <rect>
+              <x>230</x>
+              <y>220</y>
+              <width>71</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_hostel_facilities_2">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>320</y>
+              <width>381</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 600 12pt;</string>
+            </property>
+            <property name="text">
+             <string>Hostel Facilities:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+            </property>
+           </widget>
+           <widget class="Line" name="line_4">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>340</y>
+              <width>131</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="Line" name="line_5">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>520</y>
+              <width>381</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_hostel_image">
+            <property name="geometry">
+             <rect>
+              <x>210</x>
+              <y>30</y>
+              <width>180</width>
+              <height>160</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border: 0px solid black;</string>
+            </property>
+            <property name="text">
+             <string>Hostel Photo</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_hostel_location">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>70</y>
+              <width>191</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string>Location:</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_sharing_options">
+            <property name="geometry">
+             <rect>
+              <x>11</x>
+              <y>230</y>
+              <width>171</width>
+              <height>79</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_hostel_name">
+            <property name="geometry">
+             <rect>
+              <x>12</x>
+              <y>0</y>
+              <width>371</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 600 14pt;</string>
+            </property>
+            <property name="text">
+             <string>Hostel Name</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+            </property>
+           </widget>
+           <widget class="QWidget" name="layoutWidget">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>530</y>
+              <width>381</width>
+              <height>51</height>
+             </rect>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_3">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_owner_name_2">
+               <property name="styleSheet">
+                <string notr="true">font: 600 12pt;</string>
+               </property>
+               <property name="text">
+                <string>Owner Name:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_contact_no_2">
+               <property name="styleSheet">
+                <string notr="true">font: 600 12pt;</string>
+               </property>
+               <property name="text">
+                <string>Contact No:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1" colspan="2">
+              <widget class="QLabel" name="label_owner_name">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1" colspan="2">
+              <widget class="QLabel" name="label_contact_no">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="">
+            <property name="geometry">
+             <rect>
+              <x>11</x>
+              <y>101</y>
+              <width>181</width>
+              <height>91</height>
+             </rect>
+            </property>
+            <layout class="QGridLayout" name="gridLayout">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_hostel_category_2">
+               <property name="styleSheet">
+                <string notr="true">font: 600 12pt;
+</string>
+               </property>
+               <property name="text">
+                <string>Category:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="2">
+              <widget class="QLabel" name="label_totalBeds">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0" colspan="2">
+              <widget class="QLabel" name="label_availableBeds_2">
+               <property name="styleSheet">
+                <string notr="true">font: 600 12pt;</string>
+               </property>
+               <property name="text">
+                <string>Available Beds:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="2">
+              <widget class="QLabel" name="label_availableBeds">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1" colspan="2">
+              <widget class="QLabel" name="label_hostel_category">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="2">
+              <widget class="QLabel" name="label_totalBeds_2">
+               <property name="styleSheet">
+                <string notr="true">font: 600 12pt;</string>
+               </property>
+               <property name="text">
+                <string>Total Beds:</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <zorder>layoutWidget</zorder>
+           <zorder>label_hostel_image</zorder>
+           <zorder>label_hostel_location</zorder>
+           <zorder>label_sharing_options</zorder>
+           <zorder>layoutWidget</zorder>
+           <zorder>label_prices</zorder>
+           <zorder>label_hostel_facilities</zorder>
+           <zorder>label_hostel_location_2</zorder>
+           <zorder>label_sharing_options_2</zorder>
+           <zorder>label_prices_2</zorder>
+           <zorder>line_2</zorder>
+           <zorder>line_3</zorder>
+           <zorder>label_hostel_facilities_2</zorder>
+           <zorder>line_4</zorder>
+           <zorder>line_5</zorder>
+           <zorder>label_hostel_name</zorder>
+          </widget>
+          <widget class="Line" name="line">
+           <property name="geometry">
+            <rect>
+             <x>600</x>
+             <y>-10</y>
+             <width>3</width>
+             <height>800</height>
+            </rect>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+          </widget>
+          <widget class="QTableWidget" name="tableWidget">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>100</y>
+             <width>581</width>
+             <height>491</height>
+            </rect>
+           </property>
+           <property name="cursor" stdset="0">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="editTriggers">
+            <set>QAbstractItemView::NoEditTriggers</set>
+           </property>
+           <property name="selectionMode">
+            <enum>QAbstractItemView::SingleSelection</enum>
+           </property>
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+           <property name="sortingEnabled">
+            <bool>false</bool>
+           </property>
+           <attribute name="horizontalHeaderStretchLastSection">
+            <bool>true</bool>
+           </attribute>
+          </widget>
+          <widget class="QStackedWidget" name="searchStackedWidget">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>50</y>
+             <width>581</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <widget class="QWidget" name="search_page">
+            <widget class="QLabel" name="label">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>10</y>
+               <width>151</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Select/Enter Location:</string>
+             </property>
+            </widget>
+            <widget class="QComboBox" name="search_location">
+             <property name="geometry">
+              <rect>
+               <x>150</x>
+               <y>10</y>
+               <width>201</width>
+               <height>30</height>
+              </rect>
+             </property>
+             <property name="editable">
+              <bool>true</bool>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_3">
+             <property name="geometry">
+              <rect>
+               <x>370</x>
+               <y>10</y>
+               <width>91</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Category:</string>
+             </property>
+            </widget>
+            <widget class="QComboBox" name="search_category">
+             <property name="geometry">
+              <rect>
+               <x>440</x>
+               <y>10</y>
+               <width>81</width>
+               <height>30</height>
+              </rect>
+             </property>
+             <item>
+              <property name="text">
+               <string>Boys</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Girls</string>
+              </property>
+             </item>
+            </widget>
+            <widget class="QToolButton" name="searchHostelsBtn">
+             <property name="geometry">
+              <rect>
+               <x>530</x>
+               <y>10</y>
+               <width>41</width>
+               <height>30</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="resources.qrc">
+               <normaloff>:/assets/icons/search.svg</normaloff>:/assets/icons/search.svg</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>22</width>
+               <height>22</height>
+              </size>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QWidget" name="boysHostels_page">
+            <widget class="QLabel" name="label_4">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>10</y>
+               <width>151</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Enter Hostel Name:</string>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="in_boysHostelName">
+             <property name="geometry">
+              <rect>
+               <x>140</x>
+               <y>10</y>
+               <width>341</width>
+               <height>30</height>
+              </rect>
+             </property>
+             <property name="placeholderText">
+              <string>E.g: Youth Boys Hostel</string>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+            <widget class="QToolButton" name="searchBoysHostelBtn">
+             <property name="geometry">
+              <rect>
+               <x>490</x>
+               <y>10</y>
+               <width>41</width>
+               <height>30</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="resources.qrc">
+               <normaloff>:/assets/icons/search.svg</normaloff>:/assets/icons/search.svg</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>22</width>
+               <height>22</height>
+              </size>
+             </property>
+            </widget>
+            <widget class="QToolButton" name="refreshBoysHostelBtn">
+             <property name="geometry">
+              <rect>
+               <x>540</x>
+               <y>10</y>
+               <width>41</width>
+               <height>30</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="resources.qrc">
+               <normaloff>:/assets/icons/refresh-cw.svg</normaloff>:/assets/icons/refresh-cw.svg</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>22</width>
+               <height>22</height>
+              </size>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QWidget" name="girlsHostels_page">
+            <widget class="QLineEdit" name="in_girlsHostelName">
+             <property name="geometry">
+              <rect>
+               <x>140</x>
+               <y>10</y>
+               <width>341</width>
+               <height>30</height>
+              </rect>
+             </property>
+             <property name="placeholderText">
+              <string>E.g: Hamro Girls Hostel</string>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+            <widget class="QToolButton" name="searchGirlsHostelBtn">
+             <property name="geometry">
+              <rect>
+               <x>490</x>
+               <y>10</y>
+               <width>41</width>
+               <height>30</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="resources.qrc">
+               <normaloff>:/assets/icons/search.svg</normaloff>:/assets/icons/search.svg</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>22</width>
+               <height>22</height>
+              </size>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_5">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>10</y>
+               <width>151</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Enter Hostel Name:</string>
+             </property>
+            </widget>
+            <widget class="QToolButton" name="refreshGirlsHostelBtn">
+             <property name="geometry">
+              <rect>
+               <x>540</x>
+               <y>10</y>
+               <width>41</width>
+               <height>30</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="resources.qrc">
+               <normaloff>:/assets/icons/refresh-cw.svg</normaloff>:/assets/icons/refresh-cw.svg</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>22</width>
+               <height>22</height>
+              </size>
+             </property>
+            </widget>
+           </widget>
           </widget>
          </widget>
          <widget class="QWidget" name="login_page">
@@ -733,7 +1459,7 @@ font-size: 20px;
 	border-radius: 10px;
 }
 .QLabel{
-	font: 600 12pt;
+	font: 600;
 }
 .QLineEdit{
 	background: transparent;
@@ -779,7 +1505,7 @@ font-size: 20px;
             <property name="geometry">
              <rect>
               <x>100</x>
-              <y>250</y>
+              <y>240</y>
               <width>261</width>
               <height>45</height>
              </rect>
@@ -790,25 +1516,34 @@ font-size: 20px;
             <property name="text">
              <string>Login</string>
             </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+            <property name="default">
+             <bool>false</bool>
+            </property>
+            <property name="flat">
+             <bool>false</bool>
+            </property>
            </widget>
-           <widget class="QPushButton" name="createAccountBtn">
+           <widget class="QPushButton" name="login_cancelBtn">
             <property name="geometry">
              <rect>
               <x>100</x>
-              <y>320</y>
+              <y>300</y>
               <width>261</width>
               <height>45</height>
              </rect>
             </property>
             <property name="text">
-             <string>Create an account</string>
+             <string>Cancel</string>
             </property>
            </widget>
            <widget class="QFrame" name="frame_login_password">
             <property name="geometry">
              <rect>
               <x>30</x>
-              <y>150</y>
+              <y>130</y>
               <width>411</width>
               <height>81</height>
              </rect>
@@ -857,58 +1592,12 @@ font-size: 20px;
               <string>Enter Your Password</string>
              </property>
             </widget>
-            <widget class="QToolButton" name="login_pswdShowBtn">
-             <property name="geometry">
-              <rect>
-               <x>290</x>
-               <y>40</y>
-               <width>41</width>
-               <height>31</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string>...</string>
-             </property>
-             <property name="icon">
-              <iconset resource="resources.qrc">
-               <normaloff>:/assets/icons/eye.svg</normaloff>:/assets/icons/eye.svg</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>20</width>
-               <height>20</height>
-              </size>
-             </property>
-            </widget>
-            <widget class="QToolButton" name="login_pswdHideBtn">
-             <property name="geometry">
-              <rect>
-               <x>290</x>
-               <y>40</y>
-               <width>41</width>
-               <height>31</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string>...</string>
-             </property>
-             <property name="icon">
-              <iconset resource="resources.qrc">
-               <normaloff>:/assets/icons/eye-off.svg</normaloff>:/assets/icons/eye-off.svg</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>20</width>
-               <height>20</height>
-              </size>
-             </property>
-            </widget>
            </widget>
            <widget class="QFrame" name="frame_login_mobileNo">
             <property name="geometry">
              <rect>
               <x>30</x>
-              <y>60</y>
+              <y>50</y>
               <width>411</width>
               <height>81</height>
              </rect>
@@ -955,13 +1644,70 @@ font-size: 20px;
              </property>
             </widget>
            </widget>
+           <widget class="QCheckBox" name="checkBox_login_pswrd">
+            <property name="geometry">
+             <rect>
+              <x>100</x>
+              <y>210</y>
+              <width>121</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string>Show Password</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_2">
+            <property name="geometry">
+             <rect>
+              <x>100</x>
+              <y>360</y>
+              <width>221</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Don't have an account ?</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="createOneBtn">
+            <property name="geometry">
+             <rect>
+              <x>260</x>
+              <y>360</y>
+              <width>101</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">*{
+border: none;
+color: rgb(85, 170, 255);
+font-size : 12pt;
+}
+:hover{
+	background : transparent;
+	text-decoration: underline;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>Create one</string>
+            </property>
+           </widget>
           </widget>
           <widget class="QLabel" name="label_pic_login">
            <property name="geometry">
             <rect>
-             <x>490</x>
+             <x>499</x>
              <y>10</y>
-             <width>501</width>
+             <width>521</width>
              <height>560</height>
             </rect>
            </property>
@@ -982,6 +1728,19 @@ font-size: 20px;
            </property>
            <property name="text">
             <string/>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_7">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>80</y>
+             <width>471</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Welcome back, Enter Your Login Details to enter into Dashboard</string>
            </property>
           </widget>
          </widget>
@@ -1077,6 +1836,9 @@ font-size: 20px;
             <property name="text">
              <string>Sign Up</string>
             </property>
+            <property name="default">
+             <bool>false</bool>
+            </property>
            </widget>
            <widget class="QPushButton" name="signUp_cancelBtn">
             <property name="geometry">
@@ -1111,7 +1873,7 @@ font-size: 20px;
               <rect>
                <x>0</x>
                <y>10</y>
-               <width>121</width>
+               <width>131</width>
                <height>31</height>
               </rect>
              </property>
@@ -1125,9 +1887,9 @@ font-size: 20px;
             <widget class="QLineEdit" name="in_pswrd">
              <property name="geometry">
               <rect>
-               <x>130</x>
+               <x>140</x>
                <y>10</y>
-               <width>261</width>
+               <width>251</width>
                <height>31</height>
               </rect>
              </property>
@@ -1142,52 +1904,6 @@ font-size: 20px;
              </property>
              <property name="placeholderText">
               <string>Enter Your Password</string>
-             </property>
-            </widget>
-            <widget class="QToolButton" name="pswdShowBtn">
-             <property name="geometry">
-              <rect>
-               <x>350</x>
-               <y>10</y>
-               <width>41</width>
-               <height>31</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string>...</string>
-             </property>
-             <property name="icon">
-              <iconset resource="resources.qrc">
-               <normaloff>:/assets/icons/eye.svg</normaloff>:/assets/icons/eye.svg</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>20</width>
-               <height>20</height>
-              </size>
-             </property>
-            </widget>
-            <widget class="QToolButton" name="pswdHideBtn">
-             <property name="geometry">
-              <rect>
-               <x>350</x>
-               <y>10</y>
-               <width>41</width>
-               <height>31</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string>...</string>
-             </property>
-             <property name="icon">
-              <iconset resource="resources.qrc">
-               <normaloff>:/assets/icons/eye-off.svg</normaloff>:/assets/icons/eye-off.svg</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>20</width>
-               <height>20</height>
-              </size>
              </property>
             </widget>
            </widget>
@@ -1211,7 +1927,7 @@ font-size: 20px;
               <rect>
                <x>0</x>
                <y>10</y>
-               <width>121</width>
+               <width>131</width>
                <height>31</height>
               </rect>
              </property>
@@ -1225,9 +1941,9 @@ font-size: 20px;
             <widget class="QLineEdit" name="in_confirm_pswrd">
              <property name="geometry">
               <rect>
-               <x>130</x>
+               <x>140</x>
                <y>10</y>
-               <width>261</width>
+               <width>251</width>
                <height>31</height>
               </rect>
              </property>
@@ -1245,52 +1961,6 @@ font-size: 20px;
              </property>
              <property name="placeholderText">
               <string>Confirm Your Password</string>
-             </property>
-            </widget>
-            <widget class="QToolButton" name="pswdShowBtn_2">
-             <property name="geometry">
-              <rect>
-               <x>350</x>
-               <y>10</y>
-               <width>41</width>
-               <height>31</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string>...</string>
-             </property>
-             <property name="icon">
-              <iconset resource="resources.qrc">
-               <normaloff>:/assets/icons/eye.svg</normaloff>:/assets/icons/eye.svg</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>20</width>
-               <height>20</height>
-              </size>
-             </property>
-            </widget>
-            <widget class="QToolButton" name="pswdHideBtn_2">
-             <property name="geometry">
-              <rect>
-               <x>350</x>
-               <y>10</y>
-               <width>41</width>
-               <height>31</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string>...</string>
-             </property>
-             <property name="icon">
-              <iconset resource="resources.qrc">
-               <normaloff>:/assets/icons/eye-off.svg</normaloff>:/assets/icons/eye-off.svg</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>20</width>
-               <height>20</height>
-              </size>
              </property>
             </widget>
            </widget>
@@ -1312,9 +1982,9 @@ font-size: 20px;
             <widget class="QLineEdit" name="in_fullname">
              <property name="geometry">
               <rect>
-               <x>130</x>
+               <x>140</x>
                <y>10</y>
-               <width>261</width>
+               <width>251</width>
                <height>31</height>
               </rect>
              </property>
@@ -1327,7 +1997,7 @@ font-size: 20px;
               <rect>
                <x>0</x>
                <y>10</y>
-               <width>121</width>
+               <width>131</width>
                <height>31</height>
               </rect>
              </property>
@@ -1357,9 +2027,9 @@ font-size: 20px;
             <widget class="QLineEdit" name="in_mobileNo">
              <property name="geometry">
               <rect>
-               <x>130</x>
+               <x>140</x>
                <y>10</y>
-               <width>261</width>
+               <width>251</width>
                <height>31</height>
               </rect>
              </property>
@@ -1378,7 +2048,7 @@ font-size: 20px;
               <rect>
                <x>0</x>
                <y>10</y>
-               <width>121</width>
+               <width>131</width>
                <height>31</height>
               </rect>
              </property>
@@ -1390,13 +2060,35 @@ font-size: 20px;
              </property>
             </widget>
            </widget>
+           <widget class="QCheckBox" name="checkBox_signUp_pswrd">
+            <property name="geometry">
+             <rect>
+              <x>170</x>
+              <y>250</y>
+              <width>121</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">:hover{
+none;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>Show Password</string>
+            </property>
+           </widget>
           </widget>
           <widget class="QLabel" name="label_pic_signUp">
            <property name="geometry">
             <rect>
-             <x>480</x>
+             <x>490</x>
              <y>10</y>
-             <width>501</width>
+             <width>521</width>
              <height>560</height>
             </rect>
            </property>
@@ -1430,6 +2122,19 @@ font-size: 20px;
            </property>
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_6">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>80</y>
+             <width>461</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Create an owner account to add your Hostel into Search List</string>
            </property>
           </widget>
          </widget>

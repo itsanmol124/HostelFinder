@@ -291,12 +291,12 @@
         <file>icons/boy.svg</file>
         <file>icons/logo.svg</file>
     </qresource>
-    <qresource prefix="/">
-        <file>style.js</file>
-    </qresource>
+    <qresource prefix="/"/>
     <qresource prefix="/img">
         <file>img/hostel.jpg</file>
         <file>img/signup.png</file>
         <file>img/login.jpg</file>
+        <file>img/changePswrd.png</file>
+        <file>img/dashboard.png</file>
     </qresource>
 </RCC>

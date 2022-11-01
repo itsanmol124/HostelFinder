@@ -47,17 +47,18 @@ QMessageBox QPushButton {
 #bodyContainer,#leftMenuContainer{
 	border: 1.5px solid #f4f4f4;
 }
-QPushButton{
+.QPushButton{
 background: transparent;
 border-radius: 5px;
 font-size: 14pt;
 text-align: left;
 padding: 8px;
 }
-QPushButton:hover{
+.QPushButton:hover{
 font-weight: 600;
 background: rgb(255, 255, 125);
-}</string>
+}
+</string>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <property name="spacing">
@@ -75,9 +76,18 @@ background: rgb(255, 255, 125);
     <property name="bottomMargin">
      <number>0</number>
     </property>
-    <item alignment="Qt::AlignLeft">
+    <item>
      <widget class="QWidget" name="leftMenuContainer" native="true">
-      <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
        <property name="spacing">
         <number>0</number>
        </property>
@@ -94,31 +104,40 @@ background: rgb(255, 255, 125);
         <number>0</number>
        </property>
        <item>
-        <widget class="QFrame" name="frame">
+        <widget class="QFrame" name="mainMenuContainer_2">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>300</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_2">
+         <layout class="QVBoxLayout" name="verticalLayout">
           <property name="spacing">
-           <number>0</number>
+           <number>8</number>
           </property>
           <property name="leftMargin">
            <number>0</number>
           </property>
           <property name="topMargin">
-           <number>0</number>
+           <number>10</number>
           </property>
           <property name="rightMargin">
            <number>0</number>
           </property>
           <property name="bottomMargin">
-           <number>0</number>
+           <number>10</number>
           </property>
-          <item alignment="Qt::AlignTop">
-           <widget class="QPushButton" name="hostelFinderBtn">
+          <item>
+           <widget class="QPushButton" name="dashboardBtn">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -185,7 +204,10 @@ font-size: 20px;
            </widget>
           </item>
           <item>
-           <widget class="QFrame" name="frame_2">
+           <widget class="QFrame" name="mainMenuSubContainer">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -194,7 +216,7 @@ font-size: 20px;
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_3">
              <property name="spacing">
-              <number>20</number>
+              <number>30</number>
              </property>
              <property name="leftMargin">
               <number>0</number>
@@ -209,7 +231,7 @@ font-size: 20px;
               <number>20</number>
              </property>
              <item>
-              <widget class="QPushButton" name="searchHostelsBtn">
+              <widget class="QPushButton" name="addHostelMenuBtn">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -238,7 +260,7 @@ font-size: 20px;
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="searchHostelsBtn_4">
+              <widget class="QPushButton" name="editHostelBtn">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -267,7 +289,7 @@ font-size: 20px;
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="searchHostelsBtn_2">
+              <widget class="QPushButton" name="removeHostelBtn">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -296,7 +318,7 @@ font-size: 20px;
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="searchHostelsBtn_6">
+              <widget class="QPushButton" name="deleteAccountBtn">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -325,7 +347,7 @@ font-size: 20px;
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="searchHostelsBtn_5">
+              <widget class="QPushButton" name="changePasswordBtn">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -385,55 +407,58 @@ font-size: 20px;
             </layout>
            </widget>
           </item>
-          <item alignment="Qt::AlignBottom">
-           <widget class="QFrame" name="footerContainer">
+         </layout>
+        </widget>
+       </item>
+       <item alignment="Qt::AlignBottom">
+        <widget class="QFrame" name="footerContainer">
+         <property name="styleSheet">
+          <string notr="true">padding: 2px;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>6</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>6</number>
+          </property>
+          <item>
+           <widget class="Line" name="line_footer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_footer">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
             <property name="styleSheet">
-             <string notr="true">padding: 2px;</string>
+             <string notr="true"/>
             </property>
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
+            <property name="text">
+             <string>Developed By BCT 2077 Group H Students</string>
             </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
             </property>
-            <layout class="QVBoxLayout" name="verticalLayout_5">
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>6</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="Line" name="line_footer">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="label_footer">
-               <property name="font">
-                <font>
-                 <pointsize>9</pointsize>
-                 <italic>false</italic>
-                 <bold>false</bold>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
-               <property name="text">
-                <string>Developed By BCT 2077 Group H Students</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-            </layout>
            </widget>
           </item>
          </layout>
@@ -445,11 +470,1301 @@ font-size: 20px;
     <item>
      <widget class="QWidget" name="bodyContainer" native="true">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QStackedWidget" name="stackedWidget">
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	text-align : center;
+	border: 1.5px solid black;
+}
+
+</string>
+         </property>
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="addHostel_page">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">.QLineEdit{
+	background: transparent;
+	border:none;
+	border-bottom: 1px solid rgb(209, 207, 207);
+}
+.QPushButton{
+ border : 2px solid black;
+text-align: center;
+}
+</string>
+          </property>
+          <widget class="QLabel" name="label_title">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>10</y>
+             <width>101</width>
+             <height>61</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font-size : 16pt;</string>
+           </property>
+           <property name="text">
+            <string>Add Hostel</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+          <widget class="QWidget" name="widget" native="true">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>80</y>
+             <width>1001</width>
+             <height>800</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>800</height>
+            </size>
+           </property>
+           <widget class="QLabel" name="label_4">
+            <property name="geometry">
+             <rect>
+              <x>-10</x>
+              <y>119</y>
+              <width>111</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Location:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="in_5GWiFi">
+            <property name="geometry">
+             <rect>
+              <x>250</x>
+              <y>340</y>
+              <width>120</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="text">
+             <string>5G Wi-Fi</string>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="in_noSmoking">
+            <property name="geometry">
+             <rect>
+              <x>250</x>
+              <y>420</y>
+              <width>120</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="text">
+             <string>No Smoking</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_13">
+            <property name="geometry">
+             <rect>
+              <x>480</x>
+              <y>340</y>
+              <width>91</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Name:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="in_hotWater">
+            <property name="geometry">
+             <rect>
+              <x>380</x>
+              <y>340</y>
+              <width>120</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="text">
+             <string>Hot Water</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_3">
+            <property name="geometry">
+             <rect>
+              <x>-11</x>
+              <y>79</y>
+              <width>111</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>District:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="in_vegFood">
+            <property name="geometry">
+             <rect>
+              <x>120</x>
+              <y>380</y>
+              <width>120</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="text">
+             <string>Vegeterian Food</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="uploadImageBtn">
+            <property name="geometry">
+             <rect>
+              <x>610</x>
+              <y>240</y>
+              <width>201</width>
+              <height>51</height>
+             </rect>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="text">
+             <string>Upload Image</string>
+            </property>
+           </widget>
+           <widget class="QComboBox" name="in_district">
+            <property name="geometry">
+             <rect>
+              <x>120</x>
+              <y>80</y>
+              <width>231</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+            <property name="placeholderText">
+             <string/>
+            </property>
+            <item>
+             <property name="text">
+              <string>Kathmandu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Bhaktapur</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Lalitpur</string>
+             </property>
+            </item>
+           </widget>
+           <widget class="QLabel" name="label_9">
+            <property name="geometry">
+             <rect>
+              <x>-10</x>
+              <y>270</y>
+              <width>111</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Prices:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="in_threeSeater">
+            <property name="geometry">
+             <rect>
+              <x>300</x>
+              <y>240</y>
+              <width>71</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="text">
+             <string>3 Seater</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_8">
+            <property name="geometry">
+             <rect>
+              <x>-10</x>
+              <y>240</y>
+              <width>111</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Sharing Options:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+           <widget class="Line" name="line_4">
+            <property name="geometry">
+             <rect>
+              <x>500</x>
+              <y>330</y>
+              <width>118</width>
+              <height>3</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="in_cctv">
+            <property name="geometry">
+             <rect>
+              <x>380</x>
+              <y>420</y>
+              <width>120</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="text">
+             <string>CCTV</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_10">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>300</y>
+              <width>121</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font-weight : 600;
+font-size : 12pt;</string>
+            </property>
+            <property name="text">
+             <string>Hostel Facilites</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="in_ownerContact">
+            <property name="geometry">
+             <rect>
+              <x>580</x>
+              <y>380</y>
+              <width>271</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="placeholderText">
+             <string>Enter Owner Contact No.</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioBtn_girls">
+            <property name="geometry">
+             <rect>
+              <x>220</x>
+              <y>160</y>
+              <width>70</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="text">
+             <string>Girls</string>
+            </property>
+           </widget>
+           <widget class="Line" name="line_3">
+            <property name="geometry">
+             <rect>
+              <x>480</x>
+              <y>10</y>
+              <width>3</width>
+              <height>450</height>
+             </rect>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="addHostelBtn">
+            <property name="geometry">
+             <rect>
+              <x>370</x>
+              <y>467</y>
+              <width>221</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Add Hostel</string>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="in_totalBeds">
+            <property name="geometry">
+             <rect>
+              <x>120</x>
+              <y>200</y>
+              <width>61</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="minimum">
+             <number>10</number>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_12">
+            <property name="geometry">
+             <rect>
+              <x>500</x>
+              <y>300</y>
+              <width>121</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font-weight : 600;
+font-size : 12pt;</string>
+            </property>
+            <property name="text">
+             <string>Owner Details</string>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="in_oneSeater">
+            <property name="geometry">
+             <rect>
+              <x>120</x>
+              <y>240</y>
+              <width>71</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="text">
+             <string>1 Seater</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_hostel_img">
+            <property name="geometry">
+             <rect>
+              <x>610</x>
+              <y>20</y>
+              <width>200</width>
+              <height>200</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border: 1px solid black;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QSpinBox" name="in_availableBeds">
+            <property name="geometry">
+             <rect>
+              <x>300</x>
+              <y>200</y>
+              <width>61</width>
+              <height>25</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="Line" name="line_2">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>330</y>
+              <width>118</width>
+              <height>3</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="in_price1">
+            <property name="geometry">
+             <rect>
+              <x>120</x>
+              <y>270</y>
+              <width>71</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="readOnly">
+             <bool>false</bool>
+            </property>
+            <property name="placeholderText">
+             <string>1 Seater</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_2">
+            <property name="geometry">
+             <rect>
+              <x>-12</x>
+              <y>40</y>
+              <width>111</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Name:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="in_parking">
+            <property name="geometry">
+             <rect>
+              <x>120</x>
+              <y>420</y>
+              <width>120</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="text">
+             <string>Parking</string>
+            </property>
+           </widget>
+           <widget class="QComboBox" name="in_location">
+            <property name="geometry">
+             <rect>
+              <x>120</x>
+              <y>120</y>
+              <width>231</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="in_24HrsElec">
+            <property name="geometry">
+             <rect>
+              <x>120</x>
+              <y>340</y>
+              <width>120</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="text">
+             <string>24 Hrs Electricity</string>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="in_persLocker">
+            <property name="geometry">
+             <rect>
+              <x>250</x>
+              <y>380</y>
+              <width>120</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="text">
+             <string>Personal Locker</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_7">
+            <property name="geometry">
+             <rect>
+              <x>190</x>
+              <y>200</y>
+              <width>91</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Available Beds:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="in_ownerName">
+            <property name="geometry">
+             <rect>
+              <x>580</x>
+              <y>340</y>
+              <width>271</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="placeholderText">
+             <string>Enter Owner Fullname</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="in_price3">
+            <property name="geometry">
+             <rect>
+              <x>300</x>
+              <y>270</y>
+              <width>71</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="placeholderText">
+             <string>3 Seater</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="in_price4">
+            <property name="geometry">
+             <rect>
+              <x>390</x>
+              <y>270</y>
+              <width>71</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="placeholderText">
+             <string>4 Seater</string>
+            </property>
+           </widget>
+           <widget class="QRadioButton" name="radioBtn_boys">
+            <property name="geometry">
+             <rect>
+              <x>120</x>
+              <y>160</y>
+              <width>81</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="text">
+             <string>Boys</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_6">
+            <property name="geometry">
+             <rect>
+              <x>-10</x>
+              <y>200</y>
+              <width>111</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Total Beds:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="in_price2">
+            <property name="geometry">
+             <rect>
+              <x>210</x>
+              <y>270</y>
+              <width>71</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="placeholderText">
+             <string>2 Seater</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>0</y>
+              <width>121</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font-weight : 600;
+font-size : 12pt;</string>
+            </property>
+            <property name="text">
+             <string>Hostel Details</string>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="in_fourSeater">
+            <property name="geometry">
+             <rect>
+              <x>390</x>
+              <y>240</y>
+              <width>71</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="text">
+             <string>4 Seater</string>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="in_laundary">
+            <property name="geometry">
+             <rect>
+              <x>380</x>
+              <y>380</y>
+              <width>120</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="text">
+             <string>Laundary</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="in_hostelName">
+            <property name="geometry">
+             <rect>
+              <x>120</x>
+              <y>39</y>
+              <width>321</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="placeholderText">
+             <string>Enter Your Hostel Name</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_14">
+            <property name="geometry">
+             <rect>
+              <x>480</x>
+              <y>380</y>
+              <width>91</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Contact No:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_5">
+            <property name="geometry">
+             <rect>
+              <x>-10</x>
+              <y>159</y>
+              <width>111</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Category:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="in_twoSeater">
+            <property name="geometry">
+             <rect>
+              <x>210</x>
+              <y>240</y>
+              <width>71</width>
+              <height>25</height>
+             </rect>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="text">
+             <string>2 Seater</string>
+            </property>
+           </widget>
+           <widget class="Line" name="line">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>30</y>
+              <width>118</width>
+              <height>3</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="updateHostelBtn">
+            <property name="geometry">
+             <rect>
+              <x>370</x>
+              <y>470</y>
+              <width>221</width>
+              <height>42</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">padding:2px;</string>
+            </property>
+            <property name="text">
+             <string>Update Info</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_11">
+            <property name="geometry">
+             <rect>
+              <x>610</x>
+              <y>0</y>
+              <width>191</width>
+              <height>20</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Your Hostel Image:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </widget>
+          <widget class="Line" name="line_signUp">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>40</y>
+             <width>111</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="changePassword_page">
+          <widget class="QFrame" name="changePassword_frame">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>120</y>
+             <width>471</width>
+             <height>411</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#changePassword_frame{
+	background-color: rgba(244, 244, 244, 100);
+	border-radius: 10px;
+}
+.QLabel{
+	font: 600;
+}
+.QLineEdit{
+	background: transparent;
+	border:none;
+	border-bottom: 1px solid rgb(209, 207, 207);
+}
+.QToolButton{
+	background: none;
+	border: none;
+}
+#label_login{
+	font: 600 18pt;
+	color: rgb(85, 170, 255)
+}
+</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <widget class="QLabel" name="label_login">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>10</y>
+              <width>471</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string>Change Your Account Password</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="changePswrdBtn">
+            <property name="geometry">
+             <rect>
+              <x>100</x>
+              <y>270</y>
+              <width>261</width>
+              <height>45</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string>Change Password</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="changePswrd_cancelBtn">
+            <property name="geometry">
+             <rect>
+              <x>100</x>
+              <y>340</y>
+              <width>261</width>
+              <height>45</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Cancel</string>
+            </property>
+           </widget>
+           <widget class="QFrame" name="frame2">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>60</y>
+              <width>411</width>
+              <height>71</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font-size: 16px;</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <widget class="QLabel" name="label_newPswrd">
+             <property name="geometry">
+              <rect>
+               <x>70</x>
+               <y>0</y>
+               <width>151</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Enter New Password</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="in_newPswrd">
+             <property name="geometry">
+              <rect>
+               <x>70</x>
+               <y>30</y>
+               <width>261</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="autoFillBackground">
+              <bool>false</bool>
+             </property>
+             <property name="inputMask">
+              <string/>
+             </property>
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QCheckBox" name="checkBox_showChangePswrd">
+            <property name="geometry">
+             <rect>
+              <x>170</x>
+              <y>230</y>
+              <width>121</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font-size: 14px;</string>
+            </property>
+            <property name="text">
+             <string>Show Password</string>
+            </property>
+           </widget>
+           <widget class="QFrame" name="frame3">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>150</y>
+              <width>411</width>
+              <height>71</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font-size: 16px;</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <widget class="QLabel" name="label_confirmNewPswrd">
+             <property name="geometry">
+              <rect>
+               <x>70</x>
+               <y>0</y>
+               <width>221</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Confirm New Password</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+            <widget class="QLineEdit" name="in_confirmNewPswrd">
+             <property name="geometry">
+              <rect>
+               <x>70</x>
+               <y>30</y>
+               <width>261</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="autoFillBackground">
+              <bool>false</bool>
+             </property>
+             <property name="inputMask">
+              <string/>
+             </property>
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
+             </property>
+            </widget>
+           </widget>
+          </widget>
+          <widget class="QLabel" name="label_loginHead">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>20</y>
+             <width>301</width>
+             <height>61</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font-size : 16pt;</string>
+           </property>
+           <property name="text">
+            <string>Change Password</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+          <widget class="Line" name="line_login">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>60</y>
+             <width>181</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_pic_changePassword">
+           <property name="geometry">
+            <rect>
+             <x>490</x>
+             <y>20</y>
+             <width>521</width>
+             <height>560</height>
+            </rect>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>500</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="dashboardHome_page">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <widget class="QFrame" name="frame">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>10</y>
+             <width>431</width>
+             <height>581</height>
+            </rect>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <widget class="QLabel" name="label_heading">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>230</y>
+              <width>426</width>
+              <height>50</height>
+             </rect>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 18pt 600;</string>
+            </property>
+            <property name="text">
+             <string>Welcome to Dashboard</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_hello">
+            <property name="geometry">
+             <rect>
+              <x>25</x>
+              <y>20</y>
+              <width>401</width>
+              <height>50</height>
+             </rect>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 14pt 600;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_subHeading">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>280</y>
+              <width>426</width>
+              <height>50</height>
+             </rect>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 14pt &quot;Comic Sans MS&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Manage Your Hostel Account</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QFrame" name="frame_2">
+           <property name="geometry">
+            <rect>
+             <x>450</x>
+             <y>10</y>
+             <width>561</width>
+             <height>581</height>
+            </rect>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <widget class="QLabel" name="label_pic_dashboardHomePage">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>541</width>
+              <height>561</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </widget>
+         </widget>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </item>
    </layout>
