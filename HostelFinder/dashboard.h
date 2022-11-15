@@ -3,9 +3,6 @@
 #include "ui_dashboard.h"
 #include <QMainWindow>
 
-#include <QMessageBox>
-#include <QCloseEvent>
-
 namespace Ui {
 class dashboard;
 }
@@ -19,51 +16,14 @@ public:
     ~dashboard();
 
     //Function Definitions
-    void closeEvent (QCloseEvent *event)
-    {
-            QMessageBox::StandardButton resBtn = QMessageBox::question( this,"Exit",
-                                                                        tr("Are you sure want to exit?\nThis will close the entire application\n"),
-                                                                        QMessageBox::No | QMessageBox::Yes,
-                                                                        QMessageBox::No);
-            if (resBtn == QMessageBox::Yes) {
-                event->accept();
-            }
-            else {
-                event->ignore();
-            }
-    }
-    void resetChangePswrdPage(){
-        ui->in_newPswrd->setText("");
-        ui->in_confirmNewPswrd->setText("");
-        ui->checkBox_showChangePswrd->setChecked(false);
-    }
+    void closeEvent (QCloseEvent *event);
+
+    void resetChangePswrdPage();
 
     void saveHostelInfo(int n=0);
 
-    void addHostelPageReset(){
-        ui->in_hostelName->clear();
-        ui->in_price1->clear();
-        ui->in_price2->clear();
-        ui->in_price3->clear();
-        ui->in_price4->clear();
-        ui->in_price1->hide();
-        ui->in_price2->hide();
-        ui->in_price3->hide();
-        ui->in_price4->hide();
-        ui->in_oneSeater->setChecked(false);
-        ui->in_twoSeater->setChecked(false);
-        ui->in_threeSeater->setChecked(false);
-        ui->in_fourSeater->setChecked(false);
-        ui->in_24HrsElec->setChecked(false);
-        ui->in_5GWiFi->setChecked(false);
-        ui->in_hotWater->setChecked(false);
-        ui->in_vegFood->setChecked(false);
-        ui->in_persLocker->setChecked(false);
-        ui->in_laundary->setChecked(false);
-        ui->in_parking->setChecked(false);
-        ui->in_noSmoking->setChecked(false);
-        ui->in_cctv->setChecked(false);
-    }
+    void addHostelPageReset();
+
 private slots:
 
     void on_logOutBtn_clicked();
@@ -72,7 +32,7 @@ private slots:
 
     void on_addHostelMenuBtn_clicked();
 
-    void on_changePasswordBtn_clicked();
+    void on_changePswrdMenuBtn_clicked();
 
     void on_changePswrd_cancelBtn_clicked();
 
@@ -99,6 +59,9 @@ private slots:
     void on_removeHostelBtn_clicked();
 
     void on_deleteAccountBtn_clicked();
+
+    void on_addEditPageCancelBtn_clicked();
+
 
 private:
     Ui::dashboard *ui;

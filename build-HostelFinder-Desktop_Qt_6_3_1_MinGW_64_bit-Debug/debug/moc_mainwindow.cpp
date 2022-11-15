@@ -23,8 +23,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    const uint offsetsAndSize[50];
-    char stringdata0[606];
+    const uint offsetsAndSize[58];
+    char stringdata0[723];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_MainWindow_t, stringdata0) + ofs), len 
@@ -51,10 +51,14 @@ QT_MOC_LITERAL(400, 18), // "on_backBtn_clicked"
 QT_MOC_LITERAL(419, 27), // "on_searchHostelsBtn_clicked"
 QT_MOC_LITERAL(447, 26), // "on_tableWidget_cellClicked"
 QT_MOC_LITERAL(474, 3), // "row"
-QT_MOC_LITERAL(478, 30), // "on_searchBoysHostelBtn_clicked"
-QT_MOC_LITERAL(509, 31), // "on_searchGirlsHostelBtn_clicked"
-QT_MOC_LITERAL(541, 31), // "on_refreshBoysHostelBtn_clicked"
-QT_MOC_LITERAL(573, 32) // "on_refreshGirlsHostelBtn_clicked"
+QT_MOC_LITERAL(478, 31), // "on_refreshBoysHostelBtn_clicked"
+QT_MOC_LITERAL(510, 32), // "on_refreshGirlsHostelBtn_clicked"
+QT_MOC_LITERAL(543, 23), // "on_viewOnMapBtn_clicked"
+QT_MOC_LITERAL(567, 32), // "on_in_boysHostelName_textChanged"
+QT_MOC_LITERAL(600, 10), // "hostelName"
+QT_MOC_LITERAL(611, 33), // "on_in_girlsHostelName_textCha..."
+QT_MOC_LITERAL(645, 38), // "on_search_location_currentInd..."
+QT_MOC_LITERAL(684, 38) // "on_search_category_currentInd..."
 
     },
     "MainWindow\0on_hostelFinderBtn_clicked\0"
@@ -72,10 +76,13 @@ QT_MOC_LITERAL(573, 32) // "on_refreshGirlsHostelBtn_clicked"
     "on_exitBtn_clicked\0on_backBtn_clicked\0"
     "on_searchHostelsBtn_clicked\0"
     "on_tableWidget_cellClicked\0row\0"
-    "on_searchBoysHostelBtn_clicked\0"
-    "on_searchGirlsHostelBtn_clicked\0"
     "on_refreshBoysHostelBtn_clicked\0"
-    "on_refreshGirlsHostelBtn_clicked"
+    "on_refreshGirlsHostelBtn_clicked\0"
+    "on_viewOnMapBtn_clicked\0"
+    "on_in_boysHostelName_textChanged\0"
+    "hostelName\0on_in_girlsHostelName_textChanged\0"
+    "on_search_location_currentIndexChanged\0"
+    "on_search_category_currentIndexChanged"
 };
 #undef QT_MOC_LITERAL
 
@@ -85,7 +92,7 @@ static const uint qt_meta_data_MainWindow[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-      21,   14, // methods
+      24,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -93,27 +100,30 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,  140,    2, 0x08,    1 /* Private */,
-       3,    0,  141,    2, 0x08,    2 /* Private */,
-       4,    0,  142,    2, 0x08,    3 /* Private */,
-       5,    0,  143,    2, 0x08,    4 /* Private */,
-       6,    0,  144,    2, 0x08,    5 /* Private */,
-       7,    0,  145,    2, 0x08,    6 /* Private */,
-       8,    0,  146,    2, 0x08,    7 /* Private */,
-       9,    0,  147,    2, 0x08,    8 /* Private */,
-      10,    1,  148,    2, 0x08,    9 /* Private */,
-      12,    0,  151,    2, 0x08,   11 /* Private */,
-      13,    1,  152,    2, 0x08,   12 /* Private */,
-      14,    0,  155,    2, 0x08,   14 /* Private */,
-      15,    0,  156,    2, 0x08,   15 /* Private */,
-      16,    0,  157,    2, 0x08,   16 /* Private */,
-      17,    0,  158,    2, 0x08,   17 /* Private */,
-      18,    0,  159,    2, 0x08,   18 /* Private */,
-      19,    1,  160,    2, 0x08,   19 /* Private */,
-      21,    0,  163,    2, 0x08,   21 /* Private */,
-      22,    0,  164,    2, 0x08,   22 /* Private */,
-      23,    0,  165,    2, 0x08,   23 /* Private */,
-      24,    0,  166,    2, 0x08,   24 /* Private */,
+       1,    0,  158,    2, 0x08,    1 /* Private */,
+       3,    0,  159,    2, 0x08,    2 /* Private */,
+       4,    0,  160,    2, 0x08,    3 /* Private */,
+       5,    0,  161,    2, 0x08,    4 /* Private */,
+       6,    0,  162,    2, 0x08,    5 /* Private */,
+       7,    0,  163,    2, 0x08,    6 /* Private */,
+       8,    0,  164,    2, 0x08,    7 /* Private */,
+       9,    0,  165,    2, 0x08,    8 /* Private */,
+      10,    1,  166,    2, 0x08,    9 /* Private */,
+      12,    0,  169,    2, 0x08,   11 /* Private */,
+      13,    1,  170,    2, 0x08,   12 /* Private */,
+      14,    0,  173,    2, 0x08,   14 /* Private */,
+      15,    0,  174,    2, 0x08,   15 /* Private */,
+      16,    0,  175,    2, 0x08,   16 /* Private */,
+      17,    0,  176,    2, 0x08,   17 /* Private */,
+      18,    0,  177,    2, 0x08,   18 /* Private */,
+      19,    1,  178,    2, 0x08,   19 /* Private */,
+      21,    0,  181,    2, 0x08,   21 /* Private */,
+      22,    0,  182,    2, 0x08,   22 /* Private */,
+      23,    0,  183,    2, 0x08,   23 /* Private */,
+      24,    1,  184,    2, 0x08,   24 /* Private */,
+      26,    1,  187,    2, 0x08,   26 /* Private */,
+      27,    0,  190,    2, 0x08,   28 /* Private */,
+      28,    0,  191,    2, 0x08,   29 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -135,6 +145,9 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void, QMetaType::Int,   20,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,   25,
+    QMetaType::Void, QMetaType::QString,   25,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -164,10 +177,13 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 14: _t->on_backBtn_clicked(); break;
         case 15: _t->on_searchHostelsBtn_clicked(); break;
         case 16: _t->on_tableWidget_cellClicked((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 17: _t->on_searchBoysHostelBtn_clicked(); break;
-        case 18: _t->on_searchGirlsHostelBtn_clicked(); break;
-        case 19: _t->on_refreshBoysHostelBtn_clicked(); break;
-        case 20: _t->on_refreshGirlsHostelBtn_clicked(); break;
+        case 17: _t->on_refreshBoysHostelBtn_clicked(); break;
+        case 18: _t->on_refreshGirlsHostelBtn_clicked(); break;
+        case 19: _t->on_viewOnMapBtn_clicked(); break;
+        case 20: _t->on_in_boysHostelName_textChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 21: _t->on_in_girlsHostelName_textChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 22: _t->on_search_location_currentIndexChanged(); break;
+        case 23: _t->on_search_category_currentIndexChanged(); break;
         default: ;
         }
     }
@@ -181,7 +197,7 @@ const QMetaObject MainWindow::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_MainWindow_t
 , QtPrivate::TypeAndForceComplete<MainWindow, std::true_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QString &, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QString &, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
 
 
 >,
@@ -208,13 +224,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 21)
+        if (_id < 24)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 21;
+        _id -= 24;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 21)
+        if (_id < 24)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 21;
+        _id -= 24;
     }
     return _id;
 }

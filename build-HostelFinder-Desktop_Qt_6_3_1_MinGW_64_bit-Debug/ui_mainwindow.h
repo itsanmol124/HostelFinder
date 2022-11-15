@@ -24,7 +24,6 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTableWidget>
-#include <QtWidgets/QToolButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -95,14 +94,17 @@ public:
     QLabel *label_contact_no_2;
     QLabel *label_owner_name;
     QLabel *label_contact_no;
-    QWidget *widget;
-    QGridLayout *gridLayout;
-    QLabel *label_hostel_category_2;
+    QLabel *label_availableBeds;
     QLabel *label_totalBeds;
     QLabel *label_availableBeds_2;
-    QLabel *label_availableBeds;
-    QLabel *label_hostel_category;
     QLabel *label_totalBeds_2;
+    QLabel *label_hostel_category_2;
+    QLabel *label_hostel_category;
+    QPushButton *viewOnMapBtn;
+    QWidget *specialFacilitiesBox;
+    QLabel *label_special_facilities_1;
+    QFrame *line_6;
+    QLabel *label_special_facilities;
     QFrame *line;
     QTableWidget *tableWidget;
     QStackedWidget *searchStackedWidget;
@@ -111,17 +113,16 @@ public:
     QComboBox *search_location;
     QLabel *label_3;
     QComboBox *search_category;
-    QToolButton *searchHostelsBtn;
+    QPushButton *searchHostelsBtn;
     QWidget *boysHostels_page;
     QLabel *label_4;
     QLineEdit *in_boysHostelName;
-    QToolButton *searchBoysHostelBtn;
-    QToolButton *refreshBoysHostelBtn;
+    QPushButton *refreshBoysHostelBtn;
     QWidget *girlsHostels_page;
     QLineEdit *in_girlsHostelName;
-    QToolButton *searchGirlsHostelBtn;
     QLabel *label_5;
-    QToolButton *refreshGirlsHostelBtn;
+    QPushButton *refreshGirlsHostelBtn;
+    QLabel *label_noHostels;
     QWidget *login_page;
     QLabel *label_loginHead;
     QFrame *line_login;
@@ -159,6 +160,7 @@ public:
     QLineEdit *in_mobileNo;
     QLabel *label_mobileNo;
     QCheckBox *checkBox_signUp_pswrd;
+    QLabel *label_pswrdRules;
     QLabel *label_pic_signUp;
     QFrame *line_signUp;
     QLabel *label_6;
@@ -247,6 +249,7 @@ public:
         hostelFinderBtn = new QPushButton(mainMenuContainer);
         hostelFinderBtn->setObjectName(QString::fromUtf8("hostelFinderBtn"));
         hostelFinderBtn->setMinimumSize(QSize(0, 50));
+        hostelFinderBtn->setCursor(QCursor(Qt::PointingHandCursor));
         hostelFinderBtn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "text-align: center;\n"
 "font-size: 20px;\n"
@@ -288,6 +291,7 @@ public:
         searchHostelsMenuBtn = new QPushButton(mainMenuSubContainer);
         searchHostelsMenuBtn->setObjectName(QString::fromUtf8("searchHostelsMenuBtn"));
         searchHostelsMenuBtn->setMinimumSize(QSize(0, 50));
+        searchHostelsMenuBtn->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon1;
         icon1.addFile(QString::fromUtf8(":/assets/icons/search.svg"), QSize(), QIcon::Normal, QIcon::Off);
         searchHostelsMenuBtn->setIcon(icon1);
@@ -300,6 +304,7 @@ public:
         boysHostelsMenuBtn = new QPushButton(mainMenuSubContainer);
         boysHostelsMenuBtn->setObjectName(QString::fromUtf8("boysHostelsMenuBtn"));
         boysHostelsMenuBtn->setMinimumSize(QSize(0, 50));
+        boysHostelsMenuBtn->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon2;
         icon2.addFile(QString::fromUtf8(":/assets/icons/boy.svg"), QSize(), QIcon::Normal, QIcon::Off);
         boysHostelsMenuBtn->setIcon(icon2);
@@ -310,6 +315,7 @@ public:
         girlsHostelsMenuBtn = new QPushButton(mainMenuSubContainer);
         girlsHostelsMenuBtn->setObjectName(QString::fromUtf8("girlsHostelsMenuBtn"));
         girlsHostelsMenuBtn->setMinimumSize(QSize(0, 50));
+        girlsHostelsMenuBtn->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon3;
         icon3.addFile(QString::fromUtf8(":/assets/icons/girl.svg"), QSize(), QIcon::Normal, QIcon::Off);
         girlsHostelsMenuBtn->setIcon(icon3);
@@ -320,6 +326,7 @@ public:
         loginMenuBtn = new QPushButton(mainMenuSubContainer);
         loginMenuBtn->setObjectName(QString::fromUtf8("loginMenuBtn"));
         loginMenuBtn->setMinimumSize(QSize(0, 50));
+        loginMenuBtn->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon4;
         icon4.addFile(QString::fromUtf8(":/assets/icons/user.svg"), QSize(), QIcon::Normal, QIcon::Off);
         loginMenuBtn->setIcon(icon4);
@@ -331,6 +338,7 @@ public:
         signUpMenuBtn = new QPushButton(mainMenuSubContainer);
         signUpMenuBtn->setObjectName(QString::fromUtf8("signUpMenuBtn"));
         signUpMenuBtn->setMinimumSize(QSize(0, 50));
+        signUpMenuBtn->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon5;
         icon5.addFile(QString::fromUtf8(":/assets/icons/user-plus.svg"), QSize(), QIcon::Normal, QIcon::Off);
         signUpMenuBtn->setIcon(icon5);
@@ -341,6 +349,7 @@ public:
         exitBtn = new QPushButton(mainMenuSubContainer);
         exitBtn->setObjectName(QString::fromUtf8("exitBtn"));
         exitBtn->setMinimumSize(QSize(0, 50));
+        exitBtn->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon6;
         icon6.addFile(QString::fromUtf8(":/assets/icons/x-circle.svg"), QSize(), QIcon::Normal, QIcon::Off);
         exitBtn->setIcon(icon6);
@@ -505,29 +514,32 @@ public:
         backBtn = new QPushButton(searchHostels_page);
         backBtn->setObjectName(QString::fromUtf8("backBtn"));
         backBtn->setGeometry(QRect(10, 10, 41, 31));
+        backBtn->setCursor(QCursor(Qt::PointingHandCursor));
+        backBtn->setStyleSheet(QString::fromUtf8(""));
         QIcon icon7;
         icon7.addFile(QString::fromUtf8(":/assets/icons/arrow-left.svg"), QSize(), QIcon::Normal, QIcon::Off);
         backBtn->setIcon(icon7);
-        backBtn->setIconSize(QSize(28, 28));
+        backBtn->setIconSize(QSize(24, 24));
         hostelInfo_frame = new QFrame(searchHostels_page);
         hostelInfo_frame->setObjectName(QString::fromUtf8("hostelInfo_frame"));
-        hostelInfo_frame->setGeometry(QRect(610, 10, 401, 581));
+        hostelInfo_frame->setGeometry(QRect(610, 10, 411, 581));
         hostelInfo_frame->setFrameShape(QFrame::StyledPanel);
         hostelInfo_frame->setFrameShadow(QFrame::Raised);
         label_prices = new QLabel(hostelInfo_frame);
         label_prices->setObjectName(QString::fromUtf8("label_prices"));
-        label_prices->setGeometry(QRect(230, 230, 151, 79));
+        label_prices->setGeometry(QRect(210, 230, 151, 79));
         label_prices->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         label_hostel_facilities = new QLabel(hostelInfo_frame);
         label_hostel_facilities->setObjectName(QString::fromUtf8("label_hostel_facilities"));
-        label_hostel_facilities->setGeometry(QRect(11, 351, 381, 159));
+        label_hostel_facilities->setGeometry(QRect(11, 340, 181, 181));
         label_hostel_facilities->setMinimumSize(QSize(0, 0));
         label_hostel_facilities->setMaximumSize(QSize(16777215, 16777215));
         label_hostel_facilities->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         label_hostel_location_2 = new QLabel(hostelInfo_frame);
         label_hostel_location_2->setObjectName(QString::fromUtf8("label_hostel_location_2"));
-        label_hostel_location_2->setGeometry(QRect(10, 40, 191, 21));
+        label_hostel_location_2->setGeometry(QRect(10, 30, 191, 31));
         label_hostel_location_2->setStyleSheet(QString::fromUtf8("font: 600 12pt;"));
+        label_hostel_location_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         label_sharing_options_2 = new QLabel(hostelInfo_frame);
         label_sharing_options_2->setObjectName(QString::fromUtf8("label_sharing_options_2"));
         label_sharing_options_2->setGeometry(QRect(11, 200, 191, 21));
@@ -535,7 +547,7 @@ public:
         label_sharing_options_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         label_prices_2 = new QLabel(hostelInfo_frame);
         label_prices_2->setObjectName(QString::fromUtf8("label_prices_2"));
-        label_prices_2->setGeometry(QRect(230, 200, 151, 21));
+        label_prices_2->setGeometry(QRect(210, 200, 151, 21));
         label_prices_2->setStyleSheet(QString::fromUtf8("font: 600 12pt;"));
         label_prices_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         line_2 = new QFrame(hostelInfo_frame);
@@ -545,34 +557,34 @@ public:
         line_2->setFrameShadow(QFrame::Sunken);
         line_3 = new QFrame(hostelInfo_frame);
         line_3->setObjectName(QString::fromUtf8("line_3"));
-        line_3->setGeometry(QRect(230, 220, 71, 16));
+        line_3->setGeometry(QRect(210, 220, 61, 16));
         line_3->setFrameShape(QFrame::HLine);
         line_3->setFrameShadow(QFrame::Sunken);
         label_hostel_facilities_2 = new QLabel(hostelInfo_frame);
         label_hostel_facilities_2->setObjectName(QString::fromUtf8("label_hostel_facilities_2"));
-        label_hostel_facilities_2->setGeometry(QRect(10, 320, 381, 20));
+        label_hostel_facilities_2->setGeometry(QRect(10, 310, 141, 20));
         label_hostel_facilities_2->setMinimumSize(QSize(0, 0));
         label_hostel_facilities_2->setMaximumSize(QSize(16777215, 20));
         label_hostel_facilities_2->setStyleSheet(QString::fromUtf8("font: 600 12pt;"));
         label_hostel_facilities_2->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         line_4 = new QFrame(hostelInfo_frame);
         line_4->setObjectName(QString::fromUtf8("line_4"));
-        line_4->setGeometry(QRect(10, 340, 131, 16));
+        line_4->setGeometry(QRect(10, 330, 131, 16));
         line_4->setFrameShape(QFrame::HLine);
         line_4->setFrameShadow(QFrame::Sunken);
         line_5 = new QFrame(hostelInfo_frame);
         line_5->setObjectName(QString::fromUtf8("line_5"));
-        line_5->setGeometry(QRect(10, 520, 381, 16));
+        line_5->setGeometry(QRect(10, 520, 391, 16));
         line_5->setFrameShape(QFrame::HLine);
         line_5->setFrameShadow(QFrame::Sunken);
         label_hostel_image = new QLabel(hostelInfo_frame);
         label_hostel_image->setObjectName(QString::fromUtf8("label_hostel_image"));
-        label_hostel_image->setGeometry(QRect(210, 30, 180, 160));
+        label_hostel_image->setGeometry(QRect(209, 30, 181, 160));
         label_hostel_image->setStyleSheet(QString::fromUtf8("border: 0px solid black;"));
         label_hostel_image->setAlignment(Qt::AlignCenter);
         label_hostel_location = new QLabel(hostelInfo_frame);
         label_hostel_location->setObjectName(QString::fromUtf8("label_hostel_location"));
-        label_hostel_location->setGeometry(QRect(10, 70, 191, 21));
+        label_hostel_location->setGeometry(QRect(10, 50, 191, 31));
         label_hostel_location->setStyleSheet(QString::fromUtf8(""));
         label_sharing_options = new QLabel(hostelInfo_frame);
         label_sharing_options->setObjectName(QString::fromUtf8("label_sharing_options"));
@@ -580,12 +592,12 @@ public:
         label_sharing_options->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         label_hostel_name = new QLabel(hostelInfo_frame);
         label_hostel_name->setObjectName(QString::fromUtf8("label_hostel_name"));
-        label_hostel_name->setGeometry(QRect(12, 0, 371, 31));
+        label_hostel_name->setGeometry(QRect(10, 0, 371, 31));
         label_hostel_name->setStyleSheet(QString::fromUtf8("font: 600 14pt;"));
-        label_hostel_name->setAlignment(Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft);
+        label_hostel_name->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         layoutWidget = new QWidget(hostelInfo_frame);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(10, 530, 381, 51));
+        layoutWidget->setGeometry(QRect(10, 530, 391, 51));
         gridLayout_3 = new QGridLayout(layoutWidget);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
         gridLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -611,47 +623,72 @@ public:
 
         gridLayout_3->addWidget(label_contact_no, 1, 1, 1, 2);
 
-        widget = new QWidget(hostelInfo_frame);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(11, 101, 181, 91));
-        gridLayout = new QGridLayout(widget);
-        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        gridLayout->setContentsMargins(0, 0, 0, 0);
-        label_hostel_category_2 = new QLabel(widget);
+        label_availableBeds = new QLabel(hostelInfo_frame);
+        label_availableBeds->setObjectName(QString::fromUtf8("label_availableBeds"));
+        label_availableBeds->setGeometry(QRect(130, 170, 31, 21));
+        label_totalBeds = new QLabel(hostelInfo_frame);
+        label_totalBeds->setObjectName(QString::fromUtf8("label_totalBeds"));
+        label_totalBeds->setGeometry(QRect(100, 140, 31, 21));
+        label_availableBeds_2 = new QLabel(hostelInfo_frame);
+        label_availableBeds_2->setObjectName(QString::fromUtf8("label_availableBeds_2"));
+        label_availableBeds_2->setGeometry(QRect(12, 170, 111, 21));
+        label_availableBeds_2->setStyleSheet(QString::fromUtf8("font: 600 12pt;"));
+        label_totalBeds_2 = new QLabel(hostelInfo_frame);
+        label_totalBeds_2->setObjectName(QString::fromUtf8("label_totalBeds_2"));
+        label_totalBeds_2->setGeometry(QRect(12, 140, 81, 21));
+        label_totalBeds_2->setStyleSheet(QString::fromUtf8("font: 600 12pt;"));
+        label_hostel_category_2 = new QLabel(hostelInfo_frame);
         label_hostel_category_2->setObjectName(QString::fromUtf8("label_hostel_category_2"));
+        label_hostel_category_2->setGeometry(QRect(12, 110, 71, 21));
         label_hostel_category_2->setStyleSheet(QString::fromUtf8("font: 600 12pt;\n"
 ""));
-
-        gridLayout->addWidget(label_hostel_category_2, 0, 0, 1, 1);
-
-        label_totalBeds = new QLabel(widget);
-        label_totalBeds->setObjectName(QString::fromUtf8("label_totalBeds"));
-
-        gridLayout->addWidget(label_totalBeds, 1, 2, 1, 1);
-
-        label_availableBeds_2 = new QLabel(widget);
-        label_availableBeds_2->setObjectName(QString::fromUtf8("label_availableBeds_2"));
-        label_availableBeds_2->setStyleSheet(QString::fromUtf8("font: 600 12pt;"));
-
-        gridLayout->addWidget(label_availableBeds_2, 2, 0, 1, 2);
-
-        label_availableBeds = new QLabel(widget);
-        label_availableBeds->setObjectName(QString::fromUtf8("label_availableBeds"));
-
-        gridLayout->addWidget(label_availableBeds, 2, 2, 1, 1);
-
-        label_hostel_category = new QLabel(widget);
+        label_hostel_category = new QLabel(hostelInfo_frame);
         label_hostel_category->setObjectName(QString::fromUtf8("label_hostel_category"));
-
-        gridLayout->addWidget(label_hostel_category, 0, 1, 1, 2);
-
-        label_totalBeds_2 = new QLabel(widget);
-        label_totalBeds_2->setObjectName(QString::fromUtf8("label_totalBeds_2"));
-        label_totalBeds_2->setStyleSheet(QString::fromUtf8("font: 600 12pt;"));
-
-        gridLayout->addWidget(label_totalBeds_2, 1, 0, 1, 2);
-
-        layoutWidget->raise();
+        label_hostel_category->setGeometry(QRect(90, 110, 61, 21));
+        label_hostel_category->setAlignment(Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft);
+        viewOnMapBtn = new QPushButton(hostelInfo_frame);
+        viewOnMapBtn->setObjectName(QString::fromUtf8("viewOnMapBtn"));
+        viewOnMapBtn->setGeometry(QRect(10, 70, 101, 41));
+        viewOnMapBtn->setCursor(QCursor(Qt::PointingHandCursor));
+        viewOnMapBtn->setStyleSheet(QString::fromUtf8("*{\n"
+"border: none;\n"
+"color: rgb(85, 170, 255);\n"
+"font-size : 12pt;\n"
+"text-align: left;\n"
+"padding:1px;\n"
+"}\n"
+":hover{\n"
+"	background : transparent;\n"
+"	text-decoration: underline;\n"
+"}\n"
+""));
+        specialFacilitiesBox = new QWidget(hostelInfo_frame);
+        specialFacilitiesBox->setObjectName(QString::fromUtf8("specialFacilitiesBox"));
+        specialFacilitiesBox->setGeometry(QRect(210, 310, 191, 211));
+        label_special_facilities_1 = new QLabel(specialFacilitiesBox);
+        label_special_facilities_1->setObjectName(QString::fromUtf8("label_special_facilities_1"));
+        label_special_facilities_1->setGeometry(QRect(0, 0, 141, 20));
+        label_special_facilities_1->setMinimumSize(QSize(0, 0));
+        label_special_facilities_1->setMaximumSize(QSize(16777215, 20));
+        label_special_facilities_1->setStyleSheet(QString::fromUtf8("font: 600 12pt;"));
+        label_special_facilities_1->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+        line_6 = new QFrame(specialFacilitiesBox);
+        line_6->setObjectName(QString::fromUtf8("line_6"));
+        line_6->setGeometry(QRect(0, 20, 131, 16));
+        line_6->setFrameShape(QFrame::HLine);
+        line_6->setFrameShadow(QFrame::Sunken);
+        label_special_facilities = new QLabel(specialFacilitiesBox);
+        label_special_facilities->setObjectName(QString::fromUtf8("label_special_facilities"));
+        label_special_facilities->setGeometry(QRect(0, 30, 191, 181));
+        label_special_facilities->setMinimumSize(QSize(0, 0));
+        label_special_facilities->setMaximumSize(QSize(16777215, 16777215));
+        label_special_facilities->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+        label_availableBeds->raise();
+        label_totalBeds->raise();
+        label_availableBeds_2->raise();
+        label_totalBeds_2->raise();
+        label_hostel_category_2->raise();
+        label_hostel_category->raise();
         label_hostel_image->raise();
         label_hostel_location->raise();
         label_sharing_options->raise();
@@ -667,6 +704,8 @@ public:
         line_4->raise();
         line_5->raise();
         label_hostel_name->raise();
+        viewOnMapBtn->raise();
+        specialFacilitiesBox->raise();
         line = new QFrame(searchHostels_page);
         line->setObjectName(QString::fromUtf8("line"));
         line->setGeometry(QRect(600, -10, 3, 800));
@@ -692,7 +731,8 @@ public:
         label->setGeometry(QRect(0, 10, 151, 31));
         search_location = new QComboBox(search_page);
         search_location->setObjectName(QString::fromUtf8("search_location"));
-        search_location->setGeometry(QRect(150, 10, 201, 30));
+        search_location->setGeometry(QRect(150, 10, 201, 31));
+        search_location->setStyleSheet(QString::fromUtf8(""));
         search_location->setEditable(true);
         label_3 = new QLabel(search_page);
         label_3->setObjectName(QString::fromUtf8("label_3"));
@@ -701,10 +741,12 @@ public:
         search_category->addItem(QString());
         search_category->addItem(QString());
         search_category->setObjectName(QString::fromUtf8("search_category"));
-        search_category->setGeometry(QRect(440, 10, 81, 30));
-        searchHostelsBtn = new QToolButton(search_page);
+        search_category->setGeometry(QRect(440, 10, 81, 31));
+        search_category->setStyleSheet(QString::fromUtf8(""));
+        searchHostelsBtn = new QPushButton(search_page);
         searchHostelsBtn->setObjectName(QString::fromUtf8("searchHostelsBtn"));
-        searchHostelsBtn->setGeometry(QRect(530, 10, 41, 30));
+        searchHostelsBtn->setGeometry(QRect(530, 10, 41, 31));
+        searchHostelsBtn->setCursor(QCursor(Qt::PointingHandCursor));
         searchHostelsBtn->setIcon(icon1);
         searchHostelsBtn->setIconSize(QSize(22, 22));
         searchStackedWidget->addWidget(search_page);
@@ -712,19 +754,19 @@ public:
         boysHostels_page->setObjectName(QString::fromUtf8("boysHostels_page"));
         label_4 = new QLabel(boysHostels_page);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(0, 10, 151, 31));
+        label_4->setGeometry(QRect(50, 10, 131, 31));
         in_boysHostelName = new QLineEdit(boysHostels_page);
         in_boysHostelName->setObjectName(QString::fromUtf8("in_boysHostelName"));
-        in_boysHostelName->setGeometry(QRect(140, 10, 341, 30));
-        in_boysHostelName->setClearButtonEnabled(true);
-        searchBoysHostelBtn = new QToolButton(boysHostels_page);
-        searchBoysHostelBtn->setObjectName(QString::fromUtf8("searchBoysHostelBtn"));
-        searchBoysHostelBtn->setGeometry(QRect(490, 10, 41, 30));
-        searchBoysHostelBtn->setIcon(icon1);
-        searchBoysHostelBtn->setIconSize(QSize(22, 22));
-        refreshBoysHostelBtn = new QToolButton(boysHostels_page);
+        in_boysHostelName->setGeometry(QRect(190, 10, 281, 31));
+        in_boysHostelName->setStyleSheet(QString::fromUtf8("border: 1px solid black;\n"
+"border-radius: 5px;\n"
+"padding-left: 8px;\n"
+""));
+        in_boysHostelName->setClearButtonEnabled(false);
+        refreshBoysHostelBtn = new QPushButton(boysHostels_page);
         refreshBoysHostelBtn->setObjectName(QString::fromUtf8("refreshBoysHostelBtn"));
-        refreshBoysHostelBtn->setGeometry(QRect(540, 10, 41, 30));
+        refreshBoysHostelBtn->setGeometry(QRect(480, 10, 41, 31));
+        refreshBoysHostelBtn->setCursor(QCursor(Qt::PointingHandCursor));
         QIcon icon8;
         icon8.addFile(QString::fromUtf8(":/assets/icons/refresh-cw.svg"), QSize(), QIcon::Normal, QIcon::Off);
         refreshBoysHostelBtn->setIcon(icon8);
@@ -734,22 +776,26 @@ public:
         girlsHostels_page->setObjectName(QString::fromUtf8("girlsHostels_page"));
         in_girlsHostelName = new QLineEdit(girlsHostels_page);
         in_girlsHostelName->setObjectName(QString::fromUtf8("in_girlsHostelName"));
-        in_girlsHostelName->setGeometry(QRect(140, 10, 341, 30));
-        in_girlsHostelName->setClearButtonEnabled(true);
-        searchGirlsHostelBtn = new QToolButton(girlsHostels_page);
-        searchGirlsHostelBtn->setObjectName(QString::fromUtf8("searchGirlsHostelBtn"));
-        searchGirlsHostelBtn->setGeometry(QRect(490, 10, 41, 30));
-        searchGirlsHostelBtn->setIcon(icon1);
-        searchGirlsHostelBtn->setIconSize(QSize(22, 22));
+        in_girlsHostelName->setGeometry(QRect(190, 10, 281, 31));
+        in_girlsHostelName->setStyleSheet(QString::fromUtf8("border: 1px solid black;\n"
+"border-radius: 5px;\n"
+"padding-left: 8px;\n"
+""));
+        in_girlsHostelName->setClearButtonEnabled(false);
         label_5 = new QLabel(girlsHostels_page);
         label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(0, 10, 151, 31));
-        refreshGirlsHostelBtn = new QToolButton(girlsHostels_page);
+        label_5->setGeometry(QRect(50, 10, 131, 31));
+        refreshGirlsHostelBtn = new QPushButton(girlsHostels_page);
         refreshGirlsHostelBtn->setObjectName(QString::fromUtf8("refreshGirlsHostelBtn"));
-        refreshGirlsHostelBtn->setGeometry(QRect(540, 10, 41, 30));
+        refreshGirlsHostelBtn->setGeometry(QRect(480, 10, 41, 31));
+        refreshGirlsHostelBtn->setCursor(QCursor(Qt::PointingHandCursor));
         refreshGirlsHostelBtn->setIcon(icon8);
         refreshGirlsHostelBtn->setIconSize(QSize(22, 22));
         searchStackedWidget->addWidget(girlsHostels_page);
+        label_noHostels = new QLabel(searchHostels_page);
+        label_noHostels->setObjectName(QString::fromUtf8("label_noHostels"));
+        label_noHostels->setGeometry(QRect(10, 170, 581, 51));
+        label_noHostels->setAlignment(Qt::AlignCenter);
         stackedWidget->addWidget(searchHostels_page);
         login_page = new QWidget();
         login_page->setObjectName(QString::fromUtf8("login_page"));
@@ -797,12 +843,14 @@ public:
         loginBtn = new QPushButton(login_frame);
         loginBtn->setObjectName(QString::fromUtf8("loginBtn"));
         loginBtn->setGeometry(QRect(100, 240, 261, 45));
+        loginBtn->setCursor(QCursor(Qt::PointingHandCursor));
         loginBtn->setStyleSheet(QString::fromUtf8(""));
         loginBtn->setAutoDefault(false);
         loginBtn->setFlat(false);
         login_cancelBtn = new QPushButton(login_frame);
         login_cancelBtn->setObjectName(QString::fromUtf8("login_cancelBtn"));
         login_cancelBtn->setGeometry(QRect(100, 300, 261, 45));
+        login_cancelBtn->setCursor(QCursor(Qt::PointingHandCursor));
         frame_login_password = new QFrame(login_frame);
         frame_login_password->setObjectName(QString::fromUtf8("frame_login_password"));
         frame_login_password->setGeometry(QRect(30, 130, 411, 81));
@@ -841,10 +889,12 @@ public:
         createOneBtn = new QPushButton(login_frame);
         createOneBtn->setObjectName(QString::fromUtf8("createOneBtn"));
         createOneBtn->setGeometry(QRect(260, 360, 101, 31));
+        createOneBtn->setCursor(QCursor(Qt::PointingHandCursor));
         createOneBtn->setStyleSheet(QString::fromUtf8("*{\n"
 "border: none;\n"
 "color: rgb(85, 170, 255);\n"
 "font-size : 12pt;\n"
+"padding:1px;\n"
 "}\n"
 ":hover{\n"
 "	background : transparent;\n"
@@ -864,6 +914,8 @@ public:
         label_7 = new QLabel(login_page);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setGeometry(QRect(30, 80, 471, 21));
+        label_7->setStyleSheet(QString::fromUtf8("font: 12pt \"Comic Sans MS\";"));
+        label_7->setAlignment(Qt::AlignCenter);
         stackedWidget->addWidget(login_page);
         signUp_page = new QWidget();
         signUp_page->setObjectName(QString::fromUtf8("signUp_page"));
@@ -874,7 +926,7 @@ public:
         label_signUpHead->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         signUp_frame = new QFrame(signUp_page);
         signUp_frame->setObjectName(QString::fromUtf8("signUp_frame"));
-        signUp_frame->setGeometry(QRect(30, 110, 471, 411));
+        signUp_frame->setGeometry(QRect(30, 110, 471, 471));
         signUp_frame->setStyleSheet(QString::fromUtf8("#signUp_frame{\n"
 "	background-color: rgba(244, 244, 244, 100);\n"
 "	border-radius: 10px;\n"
@@ -900,19 +952,21 @@ public:
         signUp_frame->setFrameShadow(QFrame::Raised);
         label_create_an_account = new QLabel(signUp_frame);
         label_create_an_account->setObjectName(QString::fromUtf8("label_create_an_account"));
-        label_create_an_account->setGeometry(QRect(0, 10, 471, 41));
+        label_create_an_account->setGeometry(QRect(0, 0, 471, 41));
         label_create_an_account->setStyleSheet(QString::fromUtf8(""));
         label_create_an_account->setAlignment(Qt::AlignCenter);
         signUpBtn = new QPushButton(signUp_frame);
         signUpBtn->setObjectName(QString::fromUtf8("signUpBtn"));
-        signUpBtn->setGeometry(QRect(110, 280, 261, 45));
+        signUpBtn->setGeometry(QRect(110, 270, 261, 45));
+        signUpBtn->setCursor(QCursor(Qt::PointingHandCursor));
         signUpBtn->setStyleSheet(QString::fromUtf8(""));
         signUp_cancelBtn = new QPushButton(signUp_frame);
         signUp_cancelBtn->setObjectName(QString::fromUtf8("signUp_cancelBtn"));
-        signUp_cancelBtn->setGeometry(QRect(110, 340, 261, 45));
+        signUp_cancelBtn->setGeometry(QRect(110, 330, 261, 45));
+        signUp_cancelBtn->setCursor(QCursor(Qt::PointingHandCursor));
         frame_password = new QFrame(signUp_frame);
         frame_password->setObjectName(QString::fromUtf8("frame_password"));
-        frame_password->setGeometry(QRect(30, 150, 411, 51));
+        frame_password->setGeometry(QRect(30, 140, 411, 51));
         frame_password->setFrameShape(QFrame::StyledPanel);
         frame_password->setFrameShadow(QFrame::Raised);
         label_password = new QLabel(frame_password);
@@ -926,7 +980,7 @@ public:
         in_pswrd->setEchoMode(QLineEdit::Password);
         frame_confirmPassword = new QFrame(signUp_frame);
         frame_confirmPassword->setObjectName(QString::fromUtf8("frame_confirmPassword"));
-        frame_confirmPassword->setGeometry(QRect(30, 200, 411, 51));
+        frame_confirmPassword->setGeometry(QRect(30, 190, 411, 51));
         frame_confirmPassword->setFrameShape(QFrame::StyledPanel);
         frame_confirmPassword->setFrameShadow(QFrame::Raised);
         label_confirmPassword = new QLabel(frame_confirmPassword);
@@ -941,7 +995,7 @@ public:
         in_confirm_pswrd->setEchoMode(QLineEdit::Password);
         frame_fullname = new QFrame(signUp_frame);
         frame_fullname->setObjectName(QString::fromUtf8("frame_fullname"));
-        frame_fullname->setGeometry(QRect(30, 50, 411, 51));
+        frame_fullname->setGeometry(QRect(30, 40, 411, 51));
         frame_fullname->setFrameShape(QFrame::StyledPanel);
         frame_fullname->setFrameShadow(QFrame::Raised);
         in_fullname = new QLineEdit(frame_fullname);
@@ -953,7 +1007,7 @@ public:
         label_fullname->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         frame_mobileNo = new QFrame(signUp_frame);
         frame_mobileNo->setObjectName(QString::fromUtf8("frame_mobileNo"));
-        frame_mobileNo->setGeometry(QRect(30, 100, 411, 51));
+        frame_mobileNo->setGeometry(QRect(30, 90, 411, 51));
         frame_mobileNo->setFrameShape(QFrame::StyledPanel);
         frame_mobileNo->setFrameShadow(QFrame::Raised);
         in_mobileNo = new QLineEdit(frame_mobileNo);
@@ -966,12 +1020,17 @@ public:
         label_mobileNo->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         checkBox_signUp_pswrd = new QCheckBox(signUp_frame);
         checkBox_signUp_pswrd->setObjectName(QString::fromUtf8("checkBox_signUp_pswrd"));
-        checkBox_signUp_pswrd->setGeometry(QRect(170, 250, 121, 21));
+        checkBox_signUp_pswrd->setGeometry(QRect(170, 240, 121, 21));
         checkBox_signUp_pswrd->setCursor(QCursor(Qt::PointingHandCursor));
         checkBox_signUp_pswrd->setStyleSheet(QString::fromUtf8(":hover{\n"
 "none;\n"
 "}\n"
 ""));
+        label_pswrdRules = new QLabel(signUp_frame);
+        label_pswrdRules->setObjectName(QString::fromUtf8("label_pswrdRules"));
+        label_pswrdRules->setGeometry(QRect(70, 380, 341, 81));
+        label_pswrdRules->setStyleSheet(QString::fromUtf8("font: 600 10pt \"Segoe UI\";\n"
+"color: rgb(170, 85, 255);"));
         label_pic_signUp = new QLabel(signUp_page);
         label_pic_signUp->setObjectName(QString::fromUtf8("label_pic_signUp"));
         label_pic_signUp->setGeometry(QRect(490, 10, 521, 560));
@@ -986,7 +1045,9 @@ public:
         line_signUp->setFrameShadow(QFrame::Sunken);
         label_6 = new QLabel(signUp_page);
         label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setGeometry(QRect(30, 80, 461, 21));
+        label_6->setGeometry(QRect(30, 80, 471, 21));
+        label_6->setStyleSheet(QString::fromUtf8("font: 12pt \"Comic Sans MS\";"));
+        label_6->setAlignment(Qt::AlignCenter);
         stackedWidget->addWidget(signUp_page);
 
         verticalLayout_3->addWidget(stackedWidget);
@@ -1000,6 +1061,7 @@ public:
 
         searchHostelsMenuBtn->setDefault(false);
         stackedWidget->setCurrentIndex(1);
+        search_location->setCurrentIndex(-1);
         loginBtn->setDefault(false);
         signUpBtn->setDefault(false);
 
@@ -1040,57 +1102,63 @@ public:
         label_contact_no_2->setText(QCoreApplication::translate("MainWindow", "Contact No:", nullptr));
         label_owner_name->setText(QString());
         label_contact_no->setText(QString());
-        label_hostel_category_2->setText(QCoreApplication::translate("MainWindow", "Category:", nullptr));
+        label_availableBeds->setText(QString());
         label_totalBeds->setText(QString());
         label_availableBeds_2->setText(QCoreApplication::translate("MainWindow", "Available Beds:", nullptr));
-        label_availableBeds->setText(QString());
-        label_hostel_category->setText(QString());
         label_totalBeds_2->setText(QCoreApplication::translate("MainWindow", "Total Beds:", nullptr));
+        label_hostel_category_2->setText(QCoreApplication::translate("MainWindow", "Category:", nullptr));
+        label_hostel_category->setText(QString());
+        viewOnMapBtn->setText(QCoreApplication::translate("MainWindow", "View on Map", nullptr));
+        label_special_facilities_1->setText(QCoreApplication::translate("MainWindow", "Special Facilities:", nullptr));
+        label_special_facilities->setText(QString());
         label->setText(QCoreApplication::translate("MainWindow", "Select/Enter Location:", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "Category:", nullptr));
         search_category->setItemText(0, QCoreApplication::translate("MainWindow", "Boys", nullptr));
         search_category->setItemText(1, QCoreApplication::translate("MainWindow", "Girls", nullptr));
 
-        searchHostelsBtn->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
+        searchHostelsBtn->setText(QString());
         label_4->setText(QCoreApplication::translate("MainWindow", "Enter Hostel Name:", nullptr));
         in_boysHostelName->setPlaceholderText(QCoreApplication::translate("MainWindow", "E.g: Youth Boys Hostel", nullptr));
-        searchBoysHostelBtn->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
-        refreshBoysHostelBtn->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
+        refreshBoysHostelBtn->setText(QString());
         in_girlsHostelName->setPlaceholderText(QCoreApplication::translate("MainWindow", "E.g: Hamro Girls Hostel", nullptr));
-        searchGirlsHostelBtn->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
         label_5->setText(QCoreApplication::translate("MainWindow", "Enter Hostel Name:", nullptr));
-        refreshGirlsHostelBtn->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
+        refreshGirlsHostelBtn->setText(QString());
+        label_noHostels->setText(QCoreApplication::translate("MainWindow", "No any matching hostels found", nullptr));
         label_loginHead->setText(QCoreApplication::translate("MainWindow", "Login", nullptr));
         label_login->setText(QCoreApplication::translate("MainWindow", "Enter Login Details", nullptr));
         loginBtn->setText(QCoreApplication::translate("MainWindow", "Login", nullptr));
         login_cancelBtn->setText(QCoreApplication::translate("MainWindow", "Cancel", nullptr));
-        label_login_password->setText(QCoreApplication::translate("MainWindow", "Enter Password", nullptr));
+        label_login_password->setText(QCoreApplication::translate("MainWindow", "Password", nullptr));
         in_login_pswrd->setInputMask(QString());
         in_login_pswrd->setPlaceholderText(QCoreApplication::translate("MainWindow", "Enter Your Password", nullptr));
         in_login_mobileNo->setText(QString());
-        in_login_mobileNo->setPlaceholderText(QCoreApplication::translate("MainWindow", "E.g: 9801200030", nullptr));
-        label_login_mobileNo->setText(QCoreApplication::translate("MainWindow", "Enter Mobile No", nullptr));
+        in_login_mobileNo->setPlaceholderText(QCoreApplication::translate("MainWindow", "Enter Your Registered Mobile No.", nullptr));
+        label_login_mobileNo->setText(QCoreApplication::translate("MainWindow", "Mobile No.", nullptr));
         checkBox_login_pswrd->setText(QCoreApplication::translate("MainWindow", "Show Password", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Don't have an account ?", nullptr));
         createOneBtn->setText(QCoreApplication::translate("MainWindow", "Create one", nullptr));
         label_pic_login->setText(QString());
-        label_7->setText(QCoreApplication::translate("MainWindow", "Welcome back, Enter Your Login Details to enter into Dashboard", nullptr));
+        label_7->setText(QCoreApplication::translate("MainWindow", "Please login to enter into Dashboard", nullptr));
         label_signUpHead->setText(QCoreApplication::translate("MainWindow", "Sign Up", nullptr));
-        label_create_an_account->setText(QCoreApplication::translate("MainWindow", "Create an account", nullptr));
+        label_create_an_account->setText(QCoreApplication::translate("MainWindow", "Create an Account", nullptr));
         signUpBtn->setText(QCoreApplication::translate("MainWindow", "Sign Up", nullptr));
         signUp_cancelBtn->setText(QCoreApplication::translate("MainWindow", "Cancel", nullptr));
-        label_password->setText(QCoreApplication::translate("MainWindow", "Enter Password", nullptr));
+        label_password->setText(QCoreApplication::translate("MainWindow", "Password", nullptr));
         in_pswrd->setInputMask(QString());
         in_pswrd->setPlaceholderText(QCoreApplication::translate("MainWindow", "Enter Your Password", nullptr));
         label_confirmPassword->setText(QCoreApplication::translate("MainWindow", "Confirm Password", nullptr));
         in_confirm_pswrd->setInputMask(QString());
-        in_confirm_pswrd->setPlaceholderText(QCoreApplication::translate("MainWindow", "Confirm Your Password", nullptr));
+        in_confirm_pswrd->setPlaceholderText(QCoreApplication::translate("MainWindow", "Re-Enter Your Password", nullptr));
         in_fullname->setPlaceholderText(QCoreApplication::translate("MainWindow", "E.g: Raj Kumar Shakya", nullptr));
-        label_fullname->setText(QCoreApplication::translate("MainWindow", "Enter Full Name", nullptr));
+        label_fullname->setText(QCoreApplication::translate("MainWindow", "Full Name", nullptr));
         in_mobileNo->setText(QString());
         in_mobileNo->setPlaceholderText(QCoreApplication::translate("MainWindow", "E.g: 9801200030", nullptr));
-        label_mobileNo->setText(QCoreApplication::translate("MainWindow", "Enter Mobile No", nullptr));
+        label_mobileNo->setText(QCoreApplication::translate("MainWindow", "Mobile No.", nullptr));
         checkBox_signUp_pswrd->setText(QCoreApplication::translate("MainWindow", "Show Password", nullptr));
+        label_pswrdRules->setText(QCoreApplication::translate("MainWindow", "Password must be at least 8 characters long and contain: \n"
+"      1 Capital letter (A-Z)\n"
+"      1 Number (0-9)\n"
+"      1 Special character (@#$&...)", nullptr));
         label_pic_signUp->setText(QString());
         label_6->setText(QCoreApplication::translate("MainWindow", "Create an owner account to add your Hostel into Search List", nullptr));
     } // retranslateUi
