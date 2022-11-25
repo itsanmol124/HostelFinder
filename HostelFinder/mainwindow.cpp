@@ -3,7 +3,7 @@
 #include "dashboard.h"
 #include <QApplication>
 
-QString mapUrl; //Global variable to store hostel location linka
+QString mapUrl; //Global variable to store hostel location link
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
