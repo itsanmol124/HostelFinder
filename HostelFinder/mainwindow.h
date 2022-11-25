@@ -12,6 +12,7 @@
 #include <QFileDialog>
 #include <QDesktopServices>
 #include <QUrl>
+#include <QCryptographicHash>
 
 //Database Path
 #define path "C:/Users/lucky/OneDrive/Documents/Hostel Finder CPP Project/HostelFinder/database/hostel.db"
@@ -31,7 +32,13 @@ public:
     QSqlDatabase hosteldb;
 
     //Function Definitions
-    void closeEvent (QCloseEvent *event);
+    void closeEvent (QCloseEvent *event)
+    {
+        if(confirmDialogBox("Exit","Are you sure want to exit?\n"))
+            event->accept();
+        else
+            event->ignore();
+    }
 
     void connClose();
 

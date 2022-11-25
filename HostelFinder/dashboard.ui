@@ -1227,7 +1227,7 @@ font-size : 12pt;</string>
              <string>4 Seater</string>
             </property>
            </widget>
-           <widget class="QCheckBox" name="in_laundary">
+           <widget class="QCheckBox" name="in_laundry">
             <property name="geometry">
              <rect>
               <x>380</x>
@@ -1240,7 +1240,7 @@ font-size : 12pt;</string>
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="text">
-             <string>Laundary</string>
+             <string>Laundry</string>
             </property>
            </widget>
            <widget class="QLineEdit" name="in_hostelName">

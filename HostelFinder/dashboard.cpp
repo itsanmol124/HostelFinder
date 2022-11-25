@@ -3,7 +3,6 @@
 #include "mainwindow.h"
 
 QString uid;    //Global variable to store id of user
-QByteArray hImage;  //Global variable to store hostel image
 
 dashboard::dashboard(QString id, QString username, QWidget *parent) :
     QMainWindow(parent),
@@ -45,22 +44,12 @@ dashboard::~dashboard()
 *************************/
 
 //Function to make sure whether to close the application
-void dashboard::closeEvent(QCloseEvent *event)
-{
-    QMessageBox::StandardButton resBtn = QMessageBox::question( this,"Exit",
-                                                                tr("Are you sure want to exit?\nThis will close the entire application\n"),
-                                                                QMessageBox::No | QMessageBox::Yes,
-                                                                QMessageBox::No);
-    if (resBtn == QMessageBox::Yes)
-        event->accept();
-    else
-        event->ignore();
-}
+
 
 //Function to reset Change Password input fields
 void dashboard::resetChangePswrdPage(){
-    ui->in_newPswrd->setText("");
-    ui->in_confirmNewPswrd->setText("");
+    ui->in_newPswrd->clear();
+    ui->in_confirmNewPswrd->clear();
     ui->checkBox_showChangePswrd->setChecked(false);
 }
 
@@ -70,7 +59,7 @@ void dashboard::saveHostelInfo(int n){
     QString name,category,location,district,totalBeds,availBeds,ownerName,ownerContact,mapUrl,specialFacilities;
     QString one="0",two="0",three="0",four="0";
     QString price1,price2,price3,price4;
-    QString elec="0",hotWater="0",wifi="0",vegFood="0",persLocker="0",laundary="0",parking="0",noSmoking="0",cctv="0";
+    QString elec="0",hotWater="0",wifi="0",vegFood="0",persLocker="0",laundry="0",parking="0",noSmoking="0",cctv="0";
     name = ui->in_hostelName->text();
     category = "Boys";
     if(ui->radioBtn_girls->isChecked()){
@@ -107,8 +96,8 @@ void dashboard::saveHostelInfo(int n){
         vegFood= "1";
     if(ui->in_persLocker->isChecked())
         persLocker= "1";
-    if(ui->in_laundary->isChecked())
-        laundary= "1";
+    if(ui->in_laundry->isChecked())
+        laundry= "1";
     if(ui->in_parking->isChecked())
         parking= "1";
     if(ui->in_noSmoking->isChecked())
@@ -119,6 +108,11 @@ void dashboard::saveHostelInfo(int n){
     mapUrl = ui->in_mapUrl->text();
     ownerName = ui->in_ownerName->text();
     ownerContact = ui->in_ownerContact->text();
+    QPixmap image = ui->label_hostel_img->pixmap();
+    QByteArray hImage;
+    QBuffer buffer(&hImage);
+    buffer.open(QIODevice::WriteOnly);
+    image.save(&buffer,"jpg");
 
     if(!dash.connOpen()){
         qDebug() << "Database is not open";
@@ -142,29 +136,28 @@ void dashboard::saveHostelInfo(int n){
         }
         //update hostel info
         if(n==1){
-            qry.prepare("update hostels set name='"+name+"',location='"+location+"',district='"+district+"',category='"+category+"',totalBeds='"+totalBeds+"',availableBeds='"+availBeds+"',single='"+one+"',double='"+two+"',triple='"+three+"',quad='"+four+"',price1='"+price1+"',price2='"+price2+"',price3='"+price3+"',price4='"+price4+"',electricity24Hrs='"+elec+"',WiFi='"+wifi+"',hotWater='"+hotWater+"',vegFood='"+vegFood+"',personalLocker='"+persLocker+"',laundary='"+laundary+"',parking='"+parking+"',noSmoking='"+noSmoking+"',cctv='"+cctv+"',ownerName='"+ownerName+"',ownerContact='"+ownerContact+"',mapUrl='"+mapUrl+"',specialFacilities='"+specialFacilities+"',hostelImage=:imageData where id ='"+uid+"' ");
+            qry.prepare("update hostels set name='"+name+"',location='"+location+"',district='"+district+"',category='"+category+"',totalBeds='"+totalBeds+"',availableBeds='"+availBeds+"',single='"+one+"',double='"+two+"',triple='"+three+"',quad='"+four+"',price1='"+price1+"',price2='"+price2+"',price3='"+price3+"',price4='"+price4+"',electricity24Hrs='"+elec+"',WiFi='"+wifi+"',hotWater='"+hotWater+"',vegFood='"+vegFood+"',personalLocker='"+persLocker+"',laundry='"+laundry+"',parking='"+parking+"',noSmoking='"+noSmoking+"',cctv='"+cctv+"',ownerName='"+ownerName+"',ownerContact='"+ownerContact+"',mapUrl='"+mapUrl+"',specialFacilities='"+specialFacilities+"',hostelImage=:imageData where id ='"+uid+"' ");
             qry.bindValue(":imageData",hImage);
             if(qry.exec()){
                 QMessageBox::information(this,tr("Add Hostel"),tr("Hostel information updated successfully\n"));
                 ui->stackedWidget->setCurrentWidget(ui->dashboardHome_page);
-                dash.connClose();
             }
             else
                 QMessageBox::critical(this,tr("Error"),tr("Error encountered while updating hostel information\n"));
         }
         //add hostel into database
         else{
-            qry.prepare("insert into hostels (id,name,location,district,category,totalBeds,availableBeds,single,double,triple,quad,price1,price2,price3,price4,electricity24Hrs,WiFi,hotWater,vegFood,personalLocker,laundary,parking,noSmoking,cctv,ownerName,ownerContact,mapUrl,specialFacilities,hostelImage) values ('"+uid+"','"+name+"','"+location+"','"+district+"','"+category+"','"+totalBeds+"','"+availBeds+"','"+one+"','"+two+"','"+three+"','"+four+"','"+price1+"','"+price2+"','"+price3+"','"+price4+"','"+elec+"','"+wifi+"','"+hotWater+"','"+vegFood+"','"+persLocker+"','"+laundary+"','"+parking+"','"+noSmoking+"','"+cctv+"','"+ownerName+"','"+ownerContact+"','"+mapUrl+"','"+specialFacilities+"',:imageData)");
+            qry.prepare("insert into hostels (id,name,location,district,category,totalBeds,availableBeds,single,double,triple,quad,price1,price2,price3,price4,electricity24Hrs,WiFi,hotWater,vegFood,personalLocker,laundry,parking,noSmoking,cctv,ownerName,ownerContact,mapUrl,specialFacilities,hostelImage) values ('"+uid+"','"+name+"','"+location+"','"+district+"','"+category+"','"+totalBeds+"','"+availBeds+"','"+one+"','"+two+"','"+three+"','"+four+"','"+price1+"','"+price2+"','"+price3+"','"+price4+"','"+elec+"','"+wifi+"','"+hotWater+"','"+vegFood+"','"+persLocker+"','"+laundry+"','"+parking+"','"+noSmoking+"','"+cctv+"','"+ownerName+"','"+ownerContact+"','"+mapUrl+"','"+specialFacilities+"',:imageData)");
             qry.bindValue(":imageData",hImage);
             if(qry.exec()){
                 QMessageBox::information(this,tr("Add Hostel"),tr("Hostel added successfully\n"));
                 ui->stackedWidget->setCurrentWidget(ui->dashboardHome_page);
-                dash.connClose();
             }
             else
                 QMessageBox::critical(this,tr("Error"),tr("Error encountered while adding hostel\n"));
         }
     }
+    dash.connClose();
 }
 
 //Function to reset Add Hostel page input fields
@@ -187,7 +180,7 @@ void dashboard::addHostelPageReset(){
     ui->in_hotWater->setChecked(false);
     ui->in_vegFood->setChecked(false);
     ui->in_persLocker->setChecked(false);
-    ui->in_laundary->setChecked(false);
+    ui->in_laundry->setChecked(false);
     ui->in_parking->setChecked(false);
     ui->in_noSmoking->setChecked(false);
     ui->in_cctv->setChecked(false);
@@ -245,11 +238,11 @@ void dashboard::on_addHostelMenuBtn_clicked()
             qry1.next();
             ui->in_ownerName->setText(qry1.value(1).toString());
             ui->in_ownerContact->setText(qry1.value(2).toString());
-            dash.connClose();
         }
         else
             QMessageBox::warning(this,tr("Add Hostel"),tr("You have already added a hostel\n"));
     }
+    dash.connClose();
 }
 
 
@@ -278,13 +271,13 @@ void dashboard::on_changePswrdBtn_clicked()
             qry.exec();
             QMessageBox::information(this,tr("Change Password"),tr("Your password has been changed successfully\n"));
             resetChangePswrdPage();
-            ui->stackedWidget->setCurrentWidget(ui->dashboardHome_page);
-            dash.connClose();
+            ui->stackedWidget->setCurrentWidget(ui->dashboardHome_page); 
         }
         else
             QMessageBox::critical(this,tr("Error"),tr("Passwords doesn't match\n"));
         }
     }
+    dash.connClose();
 }
 
 
@@ -348,12 +341,10 @@ void dashboard::on_uploadImageBtn_clicked()
     QString filename = QFileDialog::getOpenFileName(this,
                                                     tr("Upload Photo"),
                                                     QDir::homePath(), tr("Image Files (*jpeg *.png *.jpg *.bmp)"));
+    if(filename!=""){
     QPixmap pix(filename);
     ui->label_hostel_img->setPixmap(pix.scaled(200,200,Qt::KeepAspectRatio,Qt::SmoothTransformation));
-    QImage image(filename);
-    QBuffer buffer(&hImage);
-    buffer.open(QIODevice::WriteOnly);
-    QPixmap::fromImage(image).save(&buffer,"jpg");
+    }
 }
 
 
@@ -362,7 +353,7 @@ void dashboard::on_editHostelBtn_clicked()
     MainWindow dash;
     addHostelPageReset();
     QString category,one,two,three,four;
-    QString elec,hotWater,wifi,vegFood,persLocker,laundary,parking,noSmoking,cctv;
+    QString elec,hotWater,wifi,vegFood,persLocker,laundry,parking,noSmoking,cctv;
     dash.connOpen();
     QSqlQuery qry;
     qry.prepare("select * from hostels where id='"+uid+"'");
@@ -385,7 +376,7 @@ void dashboard::on_editHostelBtn_clicked()
             hotWater = qry.value(17).toString();
             vegFood = qry.value(18).toString();
             persLocker = qry.value(19).toString();
-            laundary = qry.value(20).toString();
+            laundry = qry.value(20).toString();
             parking = qry.value(21).toString();
             noSmoking = qry.value(22).toString();
             cctv = qry.value(23).toString();
@@ -397,9 +388,9 @@ void dashboard::on_editHostelBtn_clicked()
             QPixmap outPixmap;
             outPixmap.loadFromData(outByteArray,"JPG");
             ui->label_hostel_img->setPixmap(outPixmap.scaled(200,200,Qt::KeepAspectRatio,Qt::SmoothTransformation));
-            if(category=="Girls"){
+            if(category=="Girls")
                 ui->radioBtn_girls->setChecked(1);
-            }
+
             if(one=="1"){
                 ui->in_oneSeater->setChecked(1);
                 ui->in_price1->show();
@@ -430,15 +421,14 @@ void dashboard::on_editHostelBtn_clicked()
                 ui->in_vegFood->setChecked(1);
             if(persLocker=="1")
                 ui->in_persLocker->setChecked(1);
-            if(laundary=="1")
-                ui->in_laundary->setChecked(1);
+            if(laundry=="1")
+                ui->in_laundry->setChecked(1);
             if(parking=="1")
                 ui->in_parking->setChecked(1);
             if(noSmoking=="1")
                 ui->in_noSmoking->setChecked(1);
             if(cctv=="1")
                 ui->in_cctv->setChecked(1);
-            dash.connClose();
         }
         if(count==1){
             ui->stackedWidget->setCurrentWidget(ui->addHostel_page);
@@ -446,9 +436,10 @@ void dashboard::on_editHostelBtn_clicked()
             ui->addHostelBtn->hide();
             ui->updateHostelBtn->show();
         }
-        if(count<1)
+        else
             QMessageBox::warning(this,tr("Edit Hostel"),tr("You haven't added any hostel yet\n"));
     }
+    dash.connClose();
 }
 
 void dashboard::on_updateHostelBtn_clicked()
@@ -479,7 +470,7 @@ void dashboard::on_removeHostelBtn_clicked()
                     QMessageBox::critical(this,tr("Remove Hostel"),tr("Error encountered while removing hostel\n"));
             }
         }
-        if(count<1)
+        else
             QMessageBox::warning(this,tr("Remove Hostel"),tr("You haven't added any hostel yet"));
     }
     dash.connClose();
@@ -504,6 +495,7 @@ void dashboard::on_deleteAccountBtn_clicked()
         else
             QMessageBox::critical(this,tr("Delete Account"),tr("Error encountered while deleting account\n"));
     }
+    dash.connClose();
 }
 
 

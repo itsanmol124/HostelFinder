@@ -32,13 +32,7 @@ MainWindow::~MainWindow()
 *************************/
 
 //Function to make sure whether to close the application
-void MainWindow::closeEvent(QCloseEvent *event)
-{
-    if(confirmDialogBox("Exit","Are you sure want to exit?\n"))
-        event->accept();
-    else
-        event->ignore();
-}
+
 
 //Function to close connection to the database
 void MainWindow::connClose(){
@@ -55,7 +49,7 @@ bool MainWindow::connOpen(){
         return false;
     }
     else{
-        qDebug() << ("Connected");
+//        qDebug() << ("Connected");
         return true;
     }
 }
@@ -83,10 +77,10 @@ void MainWindow::showPswrd(QLineEdit *inp, int n){
 //Function to reset Sign Up page input fields
 void MainWindow::signUpPageReset(int n){
     if(n==1){
-        ui->in_fullname->setText("");
-        ui->in_mobileNo->setText("");
-        ui->in_pswrd->setText("");
-        ui->in_confirm_pswrd->setText("");
+        ui->in_fullname->clear();
+        ui->in_mobileNo->clear();
+        ui->in_pswrd->clear();
+        ui->in_confirm_pswrd->clear();
     }
     showPswrd(ui->in_pswrd);
     showPswrd(ui->in_confirm_pswrd);
@@ -96,8 +90,8 @@ void MainWindow::signUpPageReset(int n){
 //Function to reset Login page input fields
 void MainWindow::loginPageReset(int n){
     if(n==1){
-        ui->in_login_mobileNo->setText("");
-        ui->in_login_pswrd->setText("");
+        ui->in_login_mobileNo->clear();
+        ui->in_login_pswrd->clear();
     }
     showPswrd(ui->in_login_pswrd);
     ui->checkBox_login_pswrd->setChecked(false);
@@ -162,6 +156,16 @@ int MainWindow::checkPassword(QString first, QString second){
         return 0;
 }
 
+//Funtion to encrypt password
+// Method 1
+QString MainWindow::encryptPassword(QString pwd){
+    QByteArray pswNsalt (pwd.toStdString().c_str());
+    pswNsalt.append(1) ;
+    pwd = QCryptographicHash::hash(pswNsalt, QCryptographicHash::Sha256).toHex() ;
+    return pwd;
+}
+/*
+//Method 2
 QString MainWindow::encryptPassword(QString pwd){
     QChar c;
     QString newPwd, character;
@@ -174,7 +178,7 @@ QString MainWindow::encryptPassword(QString pwd){
     }
     return newPwd;
 }
-
+*/
 //Function to reset Search Hostels page
 void MainWindow::searchHostelPageReset(){
     ui->leftMenuContainer->hide();
@@ -266,7 +270,6 @@ void MainWindow::on_searchHostelsMenuBtn_clicked()
     QSqlQueryModel * modal = new QSqlQueryModel();
     connOpen();
     QSqlQuery qry;
-
     qry.prepare("select location from locations order by location");
     qry.exec();
     modal->setQuery(std::move(qry));
@@ -315,15 +318,10 @@ void MainWindow::on_signUpBtn_clicked()
     mobileNo=ui->in_mobileNo->text();
     password=ui->in_pswrd->text();
     confirmPswrd=ui->in_confirm_pswrd->text();
-    if(!connOpen()){
-        qDebug() << "Database is not open";
-        return;
-    }
     if(fullname==""||mobileNo==""||password==""||confirmPswrd=="")
         QMessageBox::warning(this,tr("Error"),tr("Input fields can't be left empty\n"));
     else if (!checkMobileNumber(mobileNo))
         QMessageBox::critical(this,tr("Error"),tr("Invalid Mobile Number\n"));
-
     else{
         connOpen();
         QSqlQuery qry;
@@ -333,26 +331,21 @@ void MainWindow::on_signUpBtn_clicked()
             while(qry.next()){
                 count++;
             }
-            if(count==1){
-                QMessageBox::warning(this,tr("Error"),tr("Account already exists with\n entered Mobile Number\n"));
-                signUpPageReset();
-            }
-            else if(!validatePassword(password)){
-                signUpPageReset();
-            }
+            if(count==1)
+                QMessageBox::warning(this,tr("Error"),tr("Account already exists with entered Mobile Number\n"));
+            else if(!validatePassword(password));
             else{
                 if(checkPassword(password,confirmPswrd)){
 //                    password = encryptPassword(password);
                     qry.prepare("insert into users (name,mobileNo,password) values ('"+fullname+"','"+mobileNo+"','"+password+"')");
                     if(qry.exec()){
                         if(confirmDialogBox("Sign Up","Account Created Successfully\nDo you want to go to Login page?\n")){
-                            signUpPageReset(1);
                             ui->stackedWidget->setCurrentWidget(ui->login_page);
                             loginPageReset(1);
-                            connClose();
                         }
                         else
                             ui->stackedWidget->setCurrentWidget(ui->home_page);
+                        signUpPageReset(1);
                     }
                     else
                         QMessageBox::critical(this,tr("Error"),tr("Error encountered while creating an account\n"));
@@ -361,7 +354,9 @@ void MainWindow::on_signUpBtn_clicked()
                     QMessageBox::critical(this,tr("Error"),tr("Passwords doesn't match\n"));
             }
         }
+        connClose();
     }
+    signUpPageReset();
 }
 
 void MainWindow::on_checkBox_signUp_pswrd_stateChanged(int arg1)
@@ -387,13 +382,9 @@ void MainWindow::on_loginBtn_clicked()
     QString mobileNo,password,id,username;
     mobileNo=ui->in_login_mobileNo->text();
     password=ui->in_login_pswrd->text();
-    if(!connOpen()){
-        qDebug() << "Database is not open";
-        return;
-    }
-    if(mobileNo==""||password==""){
+
+    if(mobileNo==""||password=="")
         QMessageBox::warning(this,tr("Error"),tr("Input fields can't be left empty\n"));
-    }
     else{
         connOpen();
         QSqlQuery qry;
@@ -412,12 +403,13 @@ void MainWindow::on_loginBtn_clicked()
                 dashboard *dboard;
                 dboard = new class dashboard(id,username);
                 dboard->show();
-                connClose();
             }
-            if(count<1)
+            else
                 QMessageBox::warning(this,tr("Error"),tr("Incorrect Login Details\n"));
         }
+        connClose();
     }
+    loginPageReset();
 }
 
 void MainWindow::on_checkBox_login_pswrd_stateChanged(int arg1)
@@ -510,13 +502,13 @@ void MainWindow::on_tableWidget_cellClicked(int row)
         if(qry.value(15).toString()=="1")
             f="24 Hrs Electricity\n";
         if(qry.value(16).toString()=="1")
-            f.append("5G Wifi\n");
+            f.append("5G Wi-Fi\n");
         if(qry.value(17).toString()=="1")
             f.append("Hot Water\n");
         if(qry.value(18).toString()=="1")
             f.append("Vegeterian Food\n");
         if(qry.value(20).toString()=="1")
-            f.append("Laundary\n");
+            f.append("Laundry\n");
         if(qry.value(19).toString()=="1")
             f.append("Personal Locker\n");
         if(qry.value(21).toString()=="1")

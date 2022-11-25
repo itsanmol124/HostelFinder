@@ -99,7 +99,7 @@ public:
     QLineEdit *in_price2;
     QLabel *label;
     QCheckBox *in_fourSeater;
-    QCheckBox *in_laundary;
+    QCheckBox *in_laundry;
     QLineEdit *in_hostelName;
     QLabel *label_14;
     QLabel *label_5;
@@ -579,10 +579,10 @@ public:
         in_fourSeater->setObjectName(QString::fromUtf8("in_fourSeater"));
         in_fourSeater->setGeometry(QRect(390, 210, 71, 25));
         in_fourSeater->setCursor(QCursor(Qt::PointingHandCursor));
-        in_laundary = new QCheckBox(widget);
-        in_laundary->setObjectName(QString::fromUtf8("in_laundary"));
-        in_laundary->setGeometry(QRect(380, 320, 120, 25));
-        in_laundary->setCursor(QCursor(Qt::PointingHandCursor));
+        in_laundry = new QCheckBox(widget);
+        in_laundry->setObjectName(QString::fromUtf8("in_laundry"));
+        in_laundry->setGeometry(QRect(380, 320, 120, 25));
+        in_laundry->setCursor(QCursor(Qt::PointingHandCursor));
         in_hostelName = new QLineEdit(widget);
         in_hostelName->setObjectName(QString::fromUtf8("in_hostelName"));
         in_hostelName->setGeometry(QRect(120, 39, 321, 25));
@@ -864,7 +864,7 @@ public:
         in_price2->setPlaceholderText(QCoreApplication::translate("dashboard", "2 Seater", nullptr));
         label->setText(QCoreApplication::translate("dashboard", "Hostel Details", nullptr));
         in_fourSeater->setText(QCoreApplication::translate("dashboard", "4 Seater", nullptr));
-        in_laundary->setText(QCoreApplication::translate("dashboard", "Laundary", nullptr));
+        in_laundry->setText(QCoreApplication::translate("dashboard", "Laundry", nullptr));
         in_hostelName->setPlaceholderText(QCoreApplication::translate("dashboard", "Enter Your Hostel Name", nullptr));
         label_14->setText(QCoreApplication::translate("dashboard", "Contact No:", nullptr));
         label_5->setText(QCoreApplication::translate("dashboard", "Category:", nullptr));

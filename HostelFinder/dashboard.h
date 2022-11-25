@@ -3,6 +3,9 @@
 #include "ui_dashboard.h"
 #include <QMainWindow>
 
+#include <QMessageBox>
+#include <QCloseEvent>
+
 namespace Ui {
 class dashboard;
 }
@@ -16,7 +19,17 @@ public:
     ~dashboard();
 
     //Function Definitions
-    void closeEvent (QCloseEvent *event);
+    void closeEvent (QCloseEvent *event)
+    {
+        QMessageBox::StandardButton resBtn = QMessageBox::question( this,"Exit",
+                                                                    tr("Are you sure want to exit?\nThis will close the entire application\n"),
+                                                                    QMessageBox::No | QMessageBox::Yes,
+                                                                    QMessageBox::No);
+        if (resBtn == QMessageBox::Yes)
+            event->accept();
+        else
+            event->ignore();
+    }
 
     void resetChangePswrdPage();
 

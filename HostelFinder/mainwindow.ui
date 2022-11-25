@@ -526,7 +526,7 @@ font-size: 20px;
 </string>
          </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="home_page">
           <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -1351,7 +1351,7 @@ padding:1px;
             <widget class="QLabel" name="label">
              <property name="geometry">
               <rect>
-               <x>0</x>
+               <x>10</x>
                <y>10</y>
                <width>151</width>
                <height>31</height>
@@ -1364,7 +1364,7 @@ padding:1px;
             <widget class="QComboBox" name="search_location">
              <property name="geometry">
               <rect>
-               <x>150</x>
+               <x>160</x>
                <y>10</y>
                <width>201</width>
                <height>31</height>
@@ -2305,9 +2305,9 @@ color: rgb(170, 85, 255);</string>
            <property name="geometry">
             <rect>
              <x>490</x>
-             <y>10</y>
+             <y>110</y>
              <width>521</width>
-             <height>560</height>
+             <height>471</height>
             </rect>
            </property>
            <property name="sizePolicy">
@@ -2327,6 +2327,9 @@ color: rgb(170, 85, 255);</string>
            </property>
            <property name="text">
             <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
           </widget>
           <widget class="Line" name="line_signUp">

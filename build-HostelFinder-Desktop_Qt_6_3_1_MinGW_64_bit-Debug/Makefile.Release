@@ -830,8 +830,6 @@ release/moc_mainwindow.cpp: ../HostelFinder/mainwindow.h \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/QTableWidget \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/qtablewidget.h \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/qtableview.h \
-		C:/Qt/6.3.1/mingw_64/include/QtWidgets/QToolButton \
-		C:/Qt/6.3.1/mingw_64/include/QtWidgets/qtoolbutton.h \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/QVBoxLayout \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/QWidget \
 		../HostelFinder/dashboard.h \
@@ -1232,8 +1230,6 @@ release/dashboard.o: ../HostelFinder/dashboard.cpp ../HostelFinder/dashboard.h \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/QTableWidget \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/qtablewidget.h \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/qtableview.h \
-		C:/Qt/6.3.1/mingw_64/include/QtWidgets/QToolButton \
-		C:/Qt/6.3.1/mingw_64/include/QtWidgets/qtoolbutton.h \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/QMessageBox \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/qdialog.h \
@@ -1585,8 +1581,6 @@ release/main.o: ../HostelFinder/main.cpp ../HostelFinder/mainwindow.h \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/QTableWidget \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/qtablewidget.h \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/qtableview.h \
-		C:/Qt/6.3.1/mingw_64/include/QtWidgets/QToolButton \
-		C:/Qt/6.3.1/mingw_64/include/QtWidgets/qtoolbutton.h \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/QVBoxLayout \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/QWidget \
 		../HostelFinder/dashboard.h \
@@ -1948,8 +1942,6 @@ release/mainwindow.o: ../HostelFinder/mainwindow.cpp ../HostelFinder/mainwindow.
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/QTableWidget \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/qtablewidget.h \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/qtableview.h \
-		C:/Qt/6.3.1/mingw_64/include/QtWidgets/QToolButton \
-		C:/Qt/6.3.1/mingw_64/include/QtWidgets/qtoolbutton.h \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/QVBoxLayout \
 		C:/Qt/6.3.1/mingw_64/include/QtWidgets/QWidget \
 		../HostelFinder/dashboard.h \

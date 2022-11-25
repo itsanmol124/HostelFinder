@@ -728,10 +728,10 @@ public:
         search_page->setObjectName(QString::fromUtf8("search_page"));
         label = new QLabel(search_page);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(0, 10, 151, 31));
+        label->setGeometry(QRect(10, 10, 151, 31));
         search_location = new QComboBox(search_page);
         search_location->setObjectName(QString::fromUtf8("search_location"));
-        search_location->setGeometry(QRect(150, 10, 201, 31));
+        search_location->setGeometry(QRect(160, 10, 201, 31));
         search_location->setStyleSheet(QString::fromUtf8(""));
         search_location->setEditable(true);
         label_3 = new QLabel(search_page);
@@ -1033,11 +1033,12 @@ public:
 "color: rgb(170, 85, 255);"));
         label_pic_signUp = new QLabel(signUp_page);
         label_pic_signUp->setObjectName(QString::fromUtf8("label_pic_signUp"));
-        label_pic_signUp->setGeometry(QRect(490, 10, 521, 560));
+        label_pic_signUp->setGeometry(QRect(490, 110, 521, 471));
         sizePolicy3.setHeightForWidth(label_pic_signUp->sizePolicy().hasHeightForWidth());
         label_pic_signUp->setSizePolicy(sizePolicy3);
         label_pic_signUp->setMinimumSize(QSize(500, 0));
         label_pic_signUp->setStyleSheet(QString::fromUtf8(""));
+        label_pic_signUp->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         line_signUp = new QFrame(signUp_page);
         line_signUp->setObjectName(QString::fromUtf8("line_signUp"));
         line_signUp->setGeometry(QRect(30, 55, 91, 31));
@@ -1060,7 +1061,7 @@ public:
         retranslateUi(MainWindow);
 
         searchHostelsMenuBtn->setDefault(false);
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(3);
         search_location->setCurrentIndex(-1);
         loginBtn->setDefault(false);
         signUpBtn->setDefault(false);
